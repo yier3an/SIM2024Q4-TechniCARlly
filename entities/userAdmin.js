@@ -3,8 +3,4 @@ class userAdmin {
 		this.userAccount = new userAccount(name, email, username, pwd);
 		this.userProfile = new userProfile(type);
 	}
-
-	createUserAcc() {
-		//
-	}
 }
