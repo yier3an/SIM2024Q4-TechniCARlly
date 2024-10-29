@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TechniCARlly</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<span id="group_name">TechniCARlly</span> 
+		<a href="#" class="nav_home">Home</a>
+		<a href="#" class="nav_logout">Logout</a>
+		<!-- <a href="#"><i class="fa fa-fw fa-home"></i> Home </a>  -->
+		<!-- <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>  -->
+		<!-- <a href="#"><i class="fa fa-fw fa-user"></i> Login</a> -->
+	</div>
+
+	<div id="create_acc_form">
+		<h2>Create Account</h2>
+		<!-- <hr> -->
+		<form name="cAcc" onsubmit="" method="post"> <!-- **onsubmit funciton-->
+			<label for="usertype">User Type: </label>
+			<select id="usertype" name="usertype">
+				<option value="admin">User Admin</option>
+				<option value="buyer">Buyer</option>
+				<option value="seller">Seller</option>
+				<option value="agent">Used Car Agent</option>
+			</select>
+			<br><br>
+			<label for="username">Username: </label>
+			<input type="text" id="username" name="username" required/>
+			<br><br>
+			<label for="username">Password: </label>
+			<input type="text" id="password" name="password" required/>
+			<br><br>
+			<!-- <input type="submit" id="login_btn" name="submit" value="Login"> -->
+		</form>
+		<div id="create_action">
+			<button id="cancel_create_btn">Cancel</button>
+			<!-- <span id="err_mess"> -->
+				<!-- Username / Password is invalid. Please try again. -->
+			<!-- </span> -->
+			<button id="create_btn">Submit</button>
+		</div>
+	</div>
+
+	<script src="boundaries/loginUI.js"></script>
+</body>
+
+</html>

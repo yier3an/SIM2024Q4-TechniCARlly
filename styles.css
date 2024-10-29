@@ -1,0 +1,87 @@
+/* general */
+.navbar {
+    padding: 15px;
+    /* height: 40px;
+    line-height: 40px; */
+    width: 100%;
+    background-color: lightblue;
+    /* overflow: auto; */
+}
+
+#group_name {
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.navbar a {
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover{
+    padding: 15px;
+    background-color: rgb(171, 186, 191);
+}
+
+.navbar .nav_logout {
+    /* float: right; */
+    /* text-align: center; */
+    /* text-align: end; */
+}
+
+h2 {
+    text-align: center;
+}
+
+/* form - login & create account */
+#login_form, #create_acc_form {
+    width: 350px;
+    text-align: center;
+    margin: 30px auto; /* align to center (horizontal) */
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color:azure;
+}
+
+
+#login_form form, #create_acc_form form {
+    padding: 10px;
+}
+
+#login_form label, #create_acc_form label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#login_info, #create_action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#login_info button, #create_action button{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#login_info button:hover, #create_action button:hover{
+    background-color: rgb(159, 207, 255);
+}
+
+
+#err_mess {
+    color: red;
+    width: 200px;
+}
+
+
