@@ -1,11 +1,17 @@
+* {
+    margin: 0;
+}
+
+
 /* general */
 .navbar {
     padding: 15px;
-    /* height: 40px;
-    line-height: 40px; */
-    width: 100%;
+    /* width: 100%; */
     background-color: lightblue;
-    /* overflow: auto; */
+}
+
+.nav_item_right {
+    float: right;
 }
 
 #group_name {
@@ -19,28 +25,35 @@
     padding: 15px;
     color: black;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .navbar a:hover{
     padding: 15px;
-    background-color: rgb(171, 186, 191);
+    background-color: rgb(215, 255, 255);
 }
 
-.navbar .nav_logout {
-    /* float: right; */
-    /* text-align: center; */
-    /* text-align: end; */
+.navbar .active, .navbar .active:hover {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(65, 140, 226);
+}
+
+h1 {
+    text-align: center;
+    margin: 40px 0;
 }
 
 h2 {
     text-align: center;
+    margin: 20px 0;
 }
 
-/* form - login & create account */
-#login_form, #create_acc_form {
+/* --- Form - login & create account & view account info ----- */
+#login_form, #create_acc_form, 
+#view_acc_info, #edit_acc_form {
     width: 350px;
-    text-align: center;
+    /* text-align: center; */
     margin: 30px auto; /* align to center (horizontal) */
     border: 2px solid;
     border-radius: 20px;
@@ -48,40 +61,237 @@ h2 {
     background-color:azure;
 }
 
-
-#login_form form, #create_acc_form form {
-    padding: 10px;
+#login_form form, #create_acc_form form, 
+#view_acc_info form, #edit_acc_form form {
+    padding: 0 10px;
 }
 
-#login_form label, #create_acc_form label {
+#login_form tr, #create_acc_form tr, 
+#view_acc_info tr, #edit_acc_form tr {
+    height: 35px;
+}
+
+#login_form td, #create_acc_form td, 
+#view_acc_info td, #edit_acc_form td {
+    width: 100px;
+}
+
+#login_form label, #create_acc_form label, 
+#view_acc_info label, #edit_acc_form label {
     font-weight: bold;
     font-size: 18px;
 }
 
-#login_info, #create_action {
+#login_info, #create_acc_action, 
+#modify_acc_action, #edit_acc_action {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin: 10px;
+    /* margin-bottom: 20px; */
 }
 
-#login_info button, #create_action button{
+#login_info button, #create_acc_action button, 
+#modify_acc_action button, #edit_acc_action button {
     font-size: 15px;
     font-weight: bold;
-    padding: 10px 25px;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
     border: 1px solid;
     border-radius: 10px;
     cursor: pointer;
 }
 
-#login_info button:hover, #create_action button:hover{
+#login_btn:hover, #submit_create_btn:hover, 
+#edit_acc_btn:hover {
     background-color: rgb(159, 207, 255);
 }
 
+#cancel_create_btn:hover, #suspend_acc_btn:hover, 
+#discard_edit_btn:hover {
+    background-color: rgb(230, 108, 108);
+}
+
+#save_edit_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
 
 #err_mess {
     color: red;
     width: 200px;
 }
+
+/* title with cross */
+.title_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.title_row h2 {
+    text-align: center;
+    margin: 20px auto;
+    
+}
+
+.title_row a {
+    align-self: center;
+    cursor: pointer;
+    color: black;
+}
+
+.title_row a:hover {
+    color: red;
+}
+
+.title_row a i {
+    font-size: 25px;
+}
+
+
+/* ----------------------- Admin ---------------------------- */
+/* Home page */
+#modify_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px; 
+}
+
+#modify_btn button {
+    font-size: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#modify_btn button:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+
+/* View Account List page */
+.header_row {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* text-align: center; */
+    justify-content: center;
+    width: 100%;
+}
+
+.header_row h2 {
+    /* flex-grow: 1; */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header_row button {
+    align-self: center;
+    position: absolute;
+    right: 20px;
+
+    width: 100px;
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header_row button:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+.search {
+    width: 100%;
+    text-align: center;
+}
+
+.search form {
+    display: inline-block;
+    width: 80%;
+}
+
+.search input {
+    width: 70%;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search button {
+    font-size: 16px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(159, 207, 255);
+    /* border: none; */
+}
+
+#accList {
+    width: 100%;
+    /* text-align: center; */
+}
+
+#accList table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#accList tr, #accList th, #accList td {
+    border: 1px solid;
+}
+
+#accList a {
+    color: black;
+}
+
+#accList a:hover {
+    color: rgb(103, 174, 255);
+}
+
+
+/* view account  */
+/* .title_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.title_row h2 {
+    text-align: center;
+    margin: 20px auto;
+    
+}
+
+.title_row a {
+    align-self: center;
+    cursor: pointer;
+    color: black;
+}
+
+.title_row a:hover {
+    color: red;
+}
+
+.title_row a i {
+    font-size: 25px;
+}
+
+.header_row button:hover {
+    background-color: rgb(159, 255, 189);
+} */
+
 
 

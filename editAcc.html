@@ -4,7 +4,7 @@
 <head>
 	<title>TechniCARlly</title>
 	<link rel="stylesheet" href="styles.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -19,13 +19,13 @@
 		</div>
 	</div>
 
-	<div id="create_acc_form">
-		<div class="title_row">
-			<h2>Create Account</h2>
-            <a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
+	<div id="edit_acc_form">
+        <div class="title_row">
+			<h2>Edit Account</h2>
+            <a href="viewAcc.html"><i class="fa-solid fa-xmark"></i></a>
 		</div>
 		
-		<form name="create_acc" onsubmit="" method="post"> 
+		<form name="edit_acc" onsubmit="" method="post"> 
 			<table>
 				<tr>
 					<td>
@@ -37,7 +37,7 @@
 							<option value="buyer">Buyer</option>
 							<option value="seller">Seller</option>
 							<option value="agent">Used Car Agent</option>
-							<!-- ** option retrieve from database (profile) -->
+							<!-- ** option retrieve from database -->
 						</select>
 					</td>
 				</tr>
@@ -48,6 +48,7 @@
 					</td>
 					<td>
 						<input type="text" id="name" name="name" required/>
+                        <!-- ** retrieve from database -->
 					</td>
 				</tr>
 				
@@ -57,6 +58,7 @@
 					</td>
 					<td>
 						<input type="email" id="email" name="email" required/>
+                        <!-- ** retrieve from database -->
 					</td>
 				</tr>
 				
@@ -66,15 +68,16 @@
 					</td>
 					<td>
 						<input type="text" id="password" name="password" required/>
+                        <!-- ** retrieve from database -->
 					</td>
 				</tr>
 				
 			</table>			
 		</form>
 
-		<div id="create_acc_action">
-			<button id="cancel_create_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
-			<button type="submit" id="submit_create_btn" onclick="window.location.href='viewAccList.html'">Submit</button>
+        <div id="edit_acc_action">
+			<button id="discard_edit_btn" onclick="window.location.href='viewAcc.html'">Discard Changes</button>
+			<button type="submit" id="save_edit_btn" onclick="window.location.href='viewAccList.html'">Save Changes</button>
 		</div>
 	</div>
 

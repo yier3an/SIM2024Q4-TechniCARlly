@@ -19,26 +19,23 @@
 		</div>
 	</div>
 
-	<div id="create_acc_form">
-		<div class="title_row">
-			<h2>Create Account</h2>
+	<div id="view_acc_info">
+        <div class="title_row">
+			<h2>Username</h2> <!-- link to viewAccList -->
             <a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
+			<!-- <button onclick="window.location.href='viewAccList.html'">X</button> -->
 		</div>
-		
-		<form name="create_acc" onsubmit="" method="post"> 
+
+		<!-- <hr> -->
+		<form name="view_Acc" onsubmit="" method="post"> 
 			<table>
+                <!-- display data in <span> -->
 				<tr>
 					<td>
 						<label for="usertype">User Type: </label>
 					</td>
 					<td>
-						<select id="usertype" name="usertype">
-							<option value="admin">User Admin</option>
-							<option value="buyer">Buyer</option>
-							<option value="seller">Seller</option>
-							<option value="agent">Used Car Agent</option>
-							<!-- ** option retrieve from database (profile) -->
-						</select>
+						<span id="get_usertype">User Admin</span>
 					</td>
 				</tr>
 				
@@ -47,7 +44,7 @@
 						<label for="name">Name: </label>
 					</td>
 					<td>
-						<input type="text" id="name" name="name" required/>
+						<span id="get_name">SH</span>
 					</td>
 				</tr>
 				
@@ -56,26 +53,27 @@
 						<label for="email">Email: </label>
 					</td>
 					<td>
-						<input type="email" id="email" name="email" required/>
+						<span id="get_email">sh123@gmail.com</span>
 					</td>
 				</tr>
 				
-				<tr>
+				<!-- <tr>
 					<td>
 						<label for="username">Password: </label>
 					</td>
 					<td>
 						<input type="text" id="password" name="password" required/>
 					</td>
-				</tr>
+				</tr> -->
 				
-			</table>			
+			</table>
 		</form>
 
-		<div id="create_acc_action">
-			<button id="cancel_create_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
-			<button type="submit" id="submit_create_btn" onclick="window.location.href='viewAccList.html'">Submit</button>
+        <div id="modify_acc_action">
+			<button id="edit_acc_btn" onclick="window.location.href='editAcc.html'">Edit Account</button>
+			<button id="suspend_acc_btn" onclick="window.location.href='suspendAcc.html'">Suspend Account</button>
 		</div>
+
 	</div>
 
 	<script src="boundaries/loginUI.js"></script>

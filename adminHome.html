@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TechniCARlly</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<span id="group_name">TechniCARlly</span> 
+		<a href="adminHome.html" class="active">Home</a>
+		<a href="viewAccList.html">Accounts</a>
+		<a href="viewProfileList.html">Profiles</a>
+
+		<div class="nav_item_right">
+			<a href="#" class="nav_logout">Logout</a>
+		</div>
+	</div>
+
+	<div>
+		<h1 id="current_user">Welcome, </h1>
+
+        <div id="modify_btn">
+            <button onclick="window.location.href='viewAccList.html'">Modify Accounts</button>
+            <button onclick="window.location.href='viewProfileList.html'">Modify Profiles</button>
+		</div>
+	</div>
+
+	<script src="boundaries/loginUI.js"></script>
+</body>
+
+</html>
