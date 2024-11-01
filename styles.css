@@ -33,7 +33,8 @@
     background-color: rgb(215, 255, 255);
 }
 
-.navbar .active, .navbar .active:hover {
+.navbar .active, 
+.navbar .active:hover {
     color: white;
     font-weight: bold;
     background-color: rgb(65, 140, 226);
@@ -50,8 +51,11 @@ h2 {
 }
 
 /* --- Form - login & create account & view account info ----- */
-#login_form, #create_acc_form, 
-#view_acc_info, #edit_acc_form {
+#login_form, 
+#logout_mess, 
+#create_acc_form, 
+#view_acc_info, 
+#edit_acc_form {
     width: 350px;
     /* text-align: center; */
     margin: 30px auto; /* align to center (horizontal) */
@@ -61,29 +65,41 @@ h2 {
     background-color:azure;
 }
 
-#login_form form, #create_acc_form form, 
-#view_acc_info form, #edit_acc_form form {
+#login_form form, 
+#create_acc_form form, 
+#view_acc_info form, 
+#edit_acc_form form {
     padding: 0 10px;
 }
 
-#login_form tr, #create_acc_form tr, 
-#view_acc_info tr, #edit_acc_form tr {
+#login_form tr, 
+#create_acc_form tr, 
+#view_acc_info tr, 
+#edit_acc_form tr {
     height: 35px;
 }
 
-#login_form td, #create_acc_form td, 
-#view_acc_info td, #edit_acc_form td {
+#login_form td, 
+#create_acc_form td, 
+#view_acc_info td, 
+#edit_acc_form td {
     width: 100px;
 }
 
-#login_form label, #create_acc_form label, 
-#view_acc_info label, #edit_acc_form label {
+#login_form label,
+#logout_mess span, 
+#create_acc_form label, 
+#view_acc_info label, 
+#edit_acc_form label {
     font-weight: bold;
     font-size: 18px;
 }
 
-#login_info, #create_acc_action, 
-#modify_acc_action, #edit_acc_action {
+#login_info, 
+#logout_action, 
+#create_acc_action, 
+#modify_acc_action, 
+#edit_acc_action {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -91,8 +107,11 @@ h2 {
     /* margin-bottom: 20px; */
 }
 
-#login_info button, #create_acc_action button, 
-#modify_acc_action button, #edit_acc_action button {
+#login_info button, 
+#logout_action button, 
+#create_acc_action button, 
+#modify_acc_action button, 
+#edit_acc_action button {
     font-size: 15px;
     font-weight: bold;
     width: 100px;
@@ -103,12 +122,16 @@ h2 {
     cursor: pointer;
 }
 
-#login_btn:hover, #submit_create_btn:hover, 
+#login_btn:hover, 
+#cancel_logout_btn:hover, 
+#submit_create_btn:hover, 
 #edit_acc_btn:hover {
     background-color: rgb(159, 207, 255);
 }
 
-#cancel_create_btn:hover, #suspend_acc_btn:hover, 
+#logout_btn:hover, 
+#cancel_create_btn:hover, 
+#suspend_acc_btn:hover, 
 #discard_edit_btn:hover {
     background-color: rgb(230, 108, 108);
 }
@@ -259,39 +282,6 @@ h2 {
 #accList a:hover {
     color: rgb(103, 174, 255);
 }
-
-
-/* view account  */
-/* .title_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-
-.title_row h2 {
-    text-align: center;
-    margin: 20px auto;
-    
-}
-
-.title_row a {
-    align-self: center;
-    cursor: pointer;
-    color: black;
-}
-
-.title_row a:hover {
-    color: red;
-}
-
-.title_row a i {
-    font-size: 25px;
-}
-
-.header_row button:hover {
-    background-color: rgb(159, 255, 189);
-} */
 
 
 
