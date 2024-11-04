@@ -1,16 +1,15 @@
-// not very sure if using a class here is correct??
-
 class loginUI {
-	constructor() { }
+	constructor() {
+		username = document.forms["login"]["username"].value;
+		pwd = document.forms["login"]["password"].value;
+		loginC = new loginController(username, pwd);
+	}
 
-	displayLoginPg() {
-		// get login details
-		let username = document.forms["login"]["username"].value;
-		let pwd = document.forms["login"]["password"].value;
+	displayLoginPg() { }
 
+	attemptLogin() {
 		// validate the login
-		let loginController = new loginController();
-		let loginStatus = loginController.validateLogin(username, pwd);
+		let loginStatus = loginC.validateLogin(loginC.user);
 
 		if (loginStatus) {
 			this.loginSuccess();

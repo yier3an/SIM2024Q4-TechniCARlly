@@ -1,9 +1,9 @@
 class loginController {
-	constructor() { }
+	constructor(username, pwd) {
+		user = new userAccount(username, pwd);
+	}
 
 	validateLogin(username, pwd) {
-		//get user acc then return validation
-		let user = new userAccount()
-		return;
+		return user.validateLogin(username, pwd);
 	}
 }

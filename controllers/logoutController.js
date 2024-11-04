@@ -1,0 +1,7 @@
+class loginController {
+	constructor() {
+		//
+	}
+
+	confirmLogout() { }
+}
