@@ -11,8 +11,8 @@
 	<div class="navbar">
 		<span id="group_name">TechniCARlly</span> 
 		<a href="adminHome.html">Home</a>
-		<a href="viewAccList.html" class="active">Accounts</a>
-		<a href="viewProfileList.html">Profiles</a>
+		<a href="viewAccList.html">Accounts</a>
+		<a href="viewProfileList.html" class="active">Profiles</a>
 
 		<div class="nav_item_right">
 			<a href="logout.html" class="nav_logout">Logout</a>
@@ -20,28 +20,27 @@
 	</div>
 
 	<div>
-		<div class="header_row">
-			<h2>List of User Accounts</h2>
-			<button onclick="window.location.href='createAcc.html'">Create New Account</button>
+        <div class="header_row">
+			<h2>List of User Profiles</h2>
+			<button onclick="window.location.href='createProfile.html'">Create New Profile</button>
 		</div>
-        
+
         <div class="search">
         	<form name="search" onsubmit="" method="post">
-            	<input type="text" placeholder="Search by name or email" name="search_input">
+            	<input type="text" placeholder="Search by name" name="search_input">
             	<button type="submit">Search</button>
         	</form>
         </div>
 
 		<br><br>
 
-		<div id="accList">
+		<div id="profileList">
 			<table>
 				<tr>
 					<th>ID</th>
-					<th>User Type</th>
+					<!-- <th>User Type</th> -->
 					<th>Name</th>
-					<th>Email</th>
-					<th>Status</th>
+					<th>Description</th>
 					<th>Edit</th>
 				</tr>
 
@@ -49,10 +48,10 @@
 					<!-- ** retrieve from database -->
 					<td>01</td>
 					<td>Admin</td>
-					<td>SH</td>
-					<td>sh123@gmail.com</td>
-					<td>available</td> <!-- not too sure -->
-					<td><a href="viewAcc.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
+					<!-- <td>SH</td> -->
+					<!-- <td>sh123@gmail.com</td> -->
+					<td>Allow to modify the account and profiles</td>
+					<td><a href="viewProfile.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
 				</tr>
 
 			</table>

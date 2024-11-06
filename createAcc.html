@@ -21,7 +21,7 @@
 
 	<div id="create_acc_form">
 		<div class="title_row">
-			<h2>Create Account</h2>
+			<h2>Create New Account</h2>
             <a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
 		</div>
 		
@@ -31,7 +31,7 @@
 					<td>
 						<label for="usertype">User Type: </label>
 					</td>
-					<td>
+					<td class="field_input">
 						<select id="usertype" name="usertype">
 							<option value="admin">User Admin</option>
 							<option value="buyer">Buyer</option>
@@ -46,7 +46,7 @@
 					<td>
 						<label for="name">Name: </label>
 					</td>
-					<td>
+					<td class="field_input">
 						<input type="text" id="name" name="name" required/>
 					</td>
 				</tr>
@@ -55,7 +55,7 @@
 					<td>
 						<label for="email">Email: </label>
 					</td>
-					<td>
+					<td class="field_input">
 						<input type="email" id="email" name="email" required/>
 					</td>
 				</tr>
@@ -64,7 +64,7 @@
 					<td>
 						<label for="username">Password: </label>
 					</td>
-					<td>
+					<td class="field_input">
 						<input type="text" id="password" name="password" required/>
 					</td>
 				</tr>
@@ -73,8 +73,8 @@
 		</form>
 
 		<div id="create_acc_action">
-			<button id="cancel_create_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
-			<button type="submit" id="submit_create_btn" onclick="window.location.href='viewAccList.html'">Submit</button>
+			<button id="cancel_create_acc_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
+			<button type="submit" id="submit_create_acc_btn" onclick="window.location.href='viewAccList.html'">Submit</button>
 		</div>
 	</div>
 

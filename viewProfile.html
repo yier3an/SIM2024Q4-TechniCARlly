@@ -19,59 +19,42 @@
 		</div>
 	</div>
 
-	<div id="view_acc_info">
+	<div id="view_profile_info">
         <div class="title_row">
-			<h2>SH (name)</h2> <!-- link to viewAccList -->
-            <a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
+			<h2>Admin (name)</h2> <!-- link to viewProfileList -->
+            <a href="viewProfileList.html"><i class="fa-solid fa-xmark"></i></a>
 			<!-- <button onclick="window.location.href='viewAccList.html'">X</button> -->
 		</div>
 
 		<!-- <hr> -->
-		<form name="view_acc" onsubmit="" method="post"> 
+		<form name="view_profile" onsubmit="" method="post"> 
 			<table>
-                <!-- display data in <span> -->
-				<tr>
-					<td>
-						<label for="usertype">User Type: </label>
-					</td>
-					<td class="field_text">
-						<span id="get_usertype">User Admin</span>
-					</td>
-				</tr>
-				
+                <!-- display data in <span> -->				
 				<tr>
 					<td>
 						<label for="name">Name: </label>
 					</td>
 					<td class="field_text">
-						<span id="get_name">SH</span>
+						<span id="get_name">Admin</span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td>
-						<label for="email">Email: </label>
+						<label for="description">Description: </label>
 					</td>
 					<td class="field_text">
-						<span id="get_email">sh123@gmail.com</span>
+						<span id="get_description">Allow to modify the account and profiles</span>
 					</td>
 				</tr>
 				
-				<!-- <tr>
-					<td>
-						<label for="username">Password: </label>
-					</td>
-					<td>
-						<input type="text" id="password" name="password" required/>
-					</td>
-				</tr> -->
 				
 			</table>
 		</form>
 
-        <div id="modify_acc_action">
-			<button id="edit_acc_btn" onclick="window.location.href='editAcc.html'">Edit Account</button>
-			<button id="suspend_acc_btn" onclick="window.location.href='suspendAcc.html'">Suspend Account</button>
+        <div id="modify_profile_action">
+			<button id="edit_profile_btn" onclick="window.location.href='editProfile.html'">Edit Account</button>
+			<button id="suspend_profile_btn" onclick="window.location.href='suspendProfile.html'">Suspend Account</button>
 		</div>
 
 	</div>

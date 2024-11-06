@@ -55,7 +55,10 @@ h2 {
 #logout_mess, 
 #create_acc_form, 
 #view_acc_info, 
-#edit_acc_form {
+#edit_acc_form, 
+#create_profile_form, 
+#view_profile_info,
+#edit_profile_form {
     width: 350px;
     /* text-align: center; */
     margin: 30px auto; /* align to center (horizontal) */
@@ -68,50 +71,83 @@ h2 {
 #login_form form, 
 #create_acc_form form, 
 #view_acc_info form, 
-#edit_acc_form form {
+#edit_acc_form form, 
+#create_profile_form form, 
+#view_profile_info form, 
+#edit_profile_form form {
     padding: 0 10px;
 }
+
+#login_form table, 
+#create_acc_form table, 
+#view_acc_info table, 
+#edit_acc_form table, 
+#create_profile_form table
+#view_profile_info table, 
+#edit_profile_form table {
+    width: 100%;
+}
+
 
 #login_form tr, 
 #create_acc_form tr, 
 #view_acc_info tr, 
-#edit_acc_form tr {
+#edit_acc_form tr, 
+#create_profile_form tr, 
+#view_profile_info tr, 
+#edit_profile_form tr {
     height: 35px;
 }
 
-#login_form td, 
-#create_acc_form td, 
-#view_acc_info td, 
-#edit_acc_form td {
-    width: 100px;
-}
-
 #login_form label,
-#logout_mess span, 
 #create_acc_form label, 
 #view_acc_info label, 
-#edit_acc_form label {
+#edit_acc_form label, 
+#create_profile_form label, 
+#view_profile_info label, 
+#edit_profile_form label {
     font-weight: bold;
     font-size: 18px;
 }
+
+#logout_mess span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#login_form .field_input, 
+#create_acc_form .field_input, 
+#view_acc_info .field_text, 
+#edit_acc_form .field_input, 
+#create_profile_form .field_input, 
+#view_profile_info .field_text, 
+#edit_profile_form .field_input {
+    width: 65%;
+}
+
 
 #login_info, 
 #logout_action, 
 #create_acc_action, 
 #modify_acc_action, 
-#edit_acc_action {
+#edit_acc_action, 
+#create_profile_action, 
+#modify_profile_action, 
+#edit_profile_action {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin: 10px;
-    /* margin-bottom: 20px; */
 }
 
 #login_info button, 
 #logout_action button, 
 #create_acc_action button, 
 #modify_acc_action button, 
-#edit_acc_action button {
+#edit_acc_action button,
+#create_profile_action button, 
+#modify_profile_action button, 
+#edit_profile_action button {
     font-size: 15px;
     font-weight: bold;
     width: 100px;
@@ -124,19 +160,25 @@ h2 {
 
 #login_btn:hover, 
 #cancel_logout_btn:hover, 
-#submit_create_btn:hover, 
-#edit_acc_btn:hover {
+#submit_create_acc_btn:hover, 
+#edit_acc_btn:hover, 
+#submit_create_profile_btn:hover, 
+#edit_profile_btn:hover {
     background-color: rgb(159, 207, 255);
 }
 
 #logout_btn:hover, 
-#cancel_create_btn:hover, 
+#cancel_create_acc_btn:hover, 
 #suspend_acc_btn:hover, 
-#discard_edit_btn:hover {
+#discard_edit_acc_btn:hover, 
+#cancel_create_profile_btn:hover, 
+#suspend_profile_btn:hover, 
+#discard_edit_profile_btn:hover {
     background-color: rgb(230, 108, 108);
 }
 
-#save_edit_btn:hover {
+#save_edit_acc_btn:hover, 
+#save_edit_profile_btn:hover {
     background-color: rgb(159, 255, 189);
 }
 
@@ -259,27 +301,32 @@ h2 {
     /* border: none; */
 }
 
-#accList {
+#accList, 
+#profileList {
     width: 100%;
     /* text-align: center; */
 }
 
-#accList table {
+#accList table,
+#profileList table {
     width: 80%;
     margin: 0 auto;
     border-collapse: collapse;
     text-align: center;
 }
 
-#accList tr, #accList th, #accList td {
+#accList tr, #accList th, #accList td,
+#profileList te, #profileList th, #profileList td {
     border: 1px solid;
 }
 
-#accList a {
+#accList a, 
+#profileList a {
     color: black;
 }
 
-#accList a:hover {
+#accList a:hover,
+#profileList a:hover {
     color: rgb(103, 174, 255);
 }
 
