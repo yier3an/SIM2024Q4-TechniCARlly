@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "SIM2024Q4-TechniCARlly"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "SIM2024Q4-TechniCARlly-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

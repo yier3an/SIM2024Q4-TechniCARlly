@@ -4,6 +4,16 @@
 <head>
 	<title>TechniCARlly</title>
 	<link rel="stylesheet" href="styles.css" type="text/css" />
+  
+  
+  <!-- Firebase SDK Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js" type="module"></script>
+
+  <!-- Import Firebase Configuration and User Account Module -->
+  <script type="module" src="firebaseConfig.js"></script>
+  <script type="module" src="entities/useraccount.js"></script>
 </head>
 
 <body>
@@ -45,9 +55,47 @@
 		</div>
 
 		
-	</div>
+  </div>
 
-	<script src="boundaries/loginUI.js"></script>
+   <!-- Button to Create an Admin User for Testing -->
+  <div id="create_admin_form">
+    <h3>Create Admin User (Testing)</h3>
+    <button id="createAdminBtn">Create Admin User</button>
+  </div>
+
+  <script type="module">
+    import { createUser } from "./entities/useraccount.js";
+
+    // Login function (to be implemented in loginController.js)
+    function login() {
+      const email = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Login success, redirect or perform any action
+          window.location.href = "adminHome.html"; // Redirect to admin homepage
+        })
+        .catch((error) => {
+          document.getElementById("err_mess").innerText = error.message;
+        });
+    }
+
+    // Create Admin User Functionality
+    document.getElementById("createAdminBtn").addEventListener("click", () => {
+      const email = "admin@example.com";      // Change as needed
+      const password = "password123";         // Change as needed
+      const role = "admin";                   // Define user role as "admin"
+
+      createUser(email, password, role)
+        .then(() => alert("Admin user created successfully"))
+        .catch((error) => alert("Error creating admin user: " + error.message));
+    });
+  </script>
+
+  <!-- Custom JavaScript file for handling login UI -->
+  <script type="module" src="boundaries/loginUI.js"></script>
+
 </body>
 
 </html>

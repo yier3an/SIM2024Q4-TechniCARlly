@@ -253,11 +253,11 @@ h2 {
     margin: 20px 0;
 }
 
+
 .header_row .create_new_btn {
     align-self: center;
     position: absolute;
     right: 20px;
-
     width: 120px;
     padding: 5px;
     font-weight: bold;
@@ -329,6 +329,3 @@ h2 {
 #profileList a:hover {
     color: rgb(103, 174, 255);
 }
-
-
-

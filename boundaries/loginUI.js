@@ -1,16 +1,31 @@
-// not very sure if using a class here is correct??
+// boundaries/loginUI.js
+import loginController from "../controllers/loginController.js";
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("login_btn").addEventListener("click", () => {
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    loginController(email, password);
+  });
+});
+
+// note to Seth: have to use class too!! see if you can combine,
+// if not I can try for these too (Chloe)
+/*
 class loginUI {
-	constructor() { }
+	constructor() {
+		username = document.forms["login"]["username"].value;
+		pwd = document.forms["login"]["password"].value;
+		loginC = new loginController(username, pwd);
+	}
 
 	displayLoginPg() {
-		// get login details
-		let username = document.forms["login"]["username"].value;
-		let pwd = document.forms["login"]["password"].value;
+    //
+	}
 
+	attemptLogin() {
 		// validate the login
-		let loginController = new loginController();
-		let loginStatus = loginController.validateLogin(username, pwd);
+		let loginStatus = loginC.validateLogin(loginC.user);
 
 		if (loginStatus) {
 			this.loginSuccess();
@@ -32,3 +47,4 @@ class loginUI {
 		console.log("login error");
 	}
 }
+*/
