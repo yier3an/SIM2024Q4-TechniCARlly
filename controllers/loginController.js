@@ -4,6 +4,6 @@ class loginController {
 	}
 
 	validateLogin(username, pwd) {
-		return user.validateLogin(username, pwd); skgjksgsdk
+		return user.validateLogin(username, pwd);
 	}
 }
