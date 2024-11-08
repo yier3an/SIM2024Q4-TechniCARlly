@@ -3,29 +3,29 @@
 
 <head>
 	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 	<div class="navbar">
-		<span id="group_name">TechniCARlly</span> 
+		<span id="group_name">TechniCARlly</span>
 		<a href="adminHome.html">Home</a>
 		<a href="viewAccList.html">Accounts</a>
 		<a href="viewProfileList.html">Profiles</a>
 
 		<div class="nav_item_right">
-			<a href="logout.html" class="nav_logout">Logout</a>
+			<a href="../logout.html" class="nav_logout">Logout</a>
 		</div>
 	</div>
 
 	<div id="create_acc_form">
 		<div class="title_row">
 			<h2>Create New Account</h2>
-            <a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
+			<a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
 		</div>
-		
-		<form name="create_acc" onsubmit="" method="post"> 
+
+		<form name="create_acc" onsubmit="" method="post">
 			<table>
 				<tr>
 					<td>
@@ -41,44 +41,45 @@
 						</select>
 					</td>
 				</tr>
-				
+
 				<tr>
 					<td>
 						<label for="name">Name: </label>
 					</td>
 					<td class="field_input">
-						<input type="text" id="name" name="name" required/>
+						<input type="text" id="name" name="name" required />
 					</td>
 				</tr>
-				
+
 				<tr>
 					<td>
 						<label for="email">Email: </label>
 					</td>
 					<td class="field_input">
-						<input type="email" id="email" name="email" required/>
+						<input type="email" id="email" name="email" required />
 					</td>
 				</tr>
-				
+
 				<tr>
 					<td>
 						<label for="username">Password: </label>
 					</td>
 					<td class="field_input">
-						<input type="text" id="password" name="password" required/>
+						<input type="text" id="password" name="password" required />
 					</td>
 				</tr>
-				
-			</table>			
+
+			</table>
 		</form>
 
 		<div id="create_acc_action">
 			<button id="cancel_create_acc_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
-			<button type="submit" id="submit_create_acc_btn" onclick="window.location.href='viewAccList.html'">Submit</button>
+			<button type="submit" id="submit_create_acc_btn"
+				onclick="window.location.href='viewAccList.html'">Submit</button>
 		</div>
 	</div>
 
-	<script src="boundaries/loginUI.js"></script>
+	<script src="../../boundaries/loginUI.js"></script>
 </body>
 
 </html>

@@ -2,11 +2,11 @@
 import loginController from "../controllers/loginController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("login_btn").addEventListener("click", () => {
-    const email = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    loginController(email, password);
-  });
+	document.getElementById("login_btn").addEventListener("click", () => {
+		const email = document.getElementById("username").value;
+		const password = document.getElementById("password").value;
+		loginController(email, password);
+	});
 });
 
 // note to Seth: have to use class too!! see if you can combine,
@@ -20,7 +20,7 @@ class loginUI {
 	}
 
 	displayLoginPg() {
-    //
+	//
 	}
 
 	attemptLogin() {

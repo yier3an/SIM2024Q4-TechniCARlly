@@ -3,19 +3,19 @@
 
 <head>
 	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 	<div class="navbar">
-		<span id="group_name">TechniCARlly</span> 
+		<span id="group_name">TechniCARlly</span>
 		<a href="adminHome.html">Home</a>
 		<a href="viewAccList.html" class="active">Accounts</a>
 		<a href="viewProfileList.html">Profiles</a>
 
 		<div class="nav_item_right">
-			<a href="logout.html" class="nav_logout">Logout</a>
+			<a href="../logout.html" class="nav_logout">Logout</a>
 		</div>
 	</div>
 
@@ -24,13 +24,13 @@
 			<h2>List of User Accounts</h2>
 			<button class="create_new_btn" onclick="window.location.href='createAcc.html'">Create New Account</button>
 		</div>
-        
-        <div class="search">
-        	<form name="search" onsubmit="" method="post">
-            	<input type="text" placeholder="Search by name or email" name="search_input">
-            	<button type="submit">Search</button>
-        	</form>
-        </div>
+
+		<div class="search">
+			<form name="search" onsubmit="" method="post">
+				<input type="text" placeholder="Search by name or email" name="search_input">
+				<button type="submit">Search</button>
+			</form>
+		</div>
 
 		<br><br>
 
@@ -51,7 +51,7 @@
 					<td>Admin</td>
 					<td>SH</td>
 					<td>sh123@gmail.com</td>
-					<td>available</td> 
+					<td>available</td>
 					<td><a href="editAcc.html"><i class="fa-solid fa-pen-to-square"></i></a></td>
 				</tr>
 
@@ -60,7 +60,7 @@
 
 	</div>
 
-	<script src="boundaries/loginUI.js"></script>
+	<script src="../boundaries/loginUI.js"></script>
 </body>
 
 </html>
