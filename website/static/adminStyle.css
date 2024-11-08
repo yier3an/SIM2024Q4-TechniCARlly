@@ -71,10 +71,8 @@
 }
 
 #create_acc_action, 
-#modify_acc_action, 
 #edit_acc_action, 
 #create_profile_action, 
-#modify_profile_action, 
 #edit_profile_action {
     display: flex;
     flex-direction: row;

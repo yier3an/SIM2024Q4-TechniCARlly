@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+}
+
+/* ------------- Home ------------- */
+.header_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.header_row h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header_row .create_new_btn {
+    align-self: center;
+    position: absolute;
+    right: 20px;
+    width: 120px;
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header_row .create_new_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+
+/* ------------- serach bar ------------- */
+.search {
+    width: 100%;
+    text-align: center;
+}
+
+.search form {
+    display: inline-block;
+    width: 80%;
+}
+
+.search input {
+    width: 70%;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search button {
+    font-size: 16px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+
+/* ------------- car listing ------------- */
+.car_listing {
+    width: 100%;
+    /* padding: 0 50px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.car {
+    float: left;
+    width: 350px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 20px 20px;
+}
+
+.car img {
+    width: 100%;
+    height: 250px;
+}
+
+.car_content {
+    margin: 10px;
+}
+
+.car_content span {
+    font-size: 18px;
+}
+
+.car_content .label {
+    font-weight: bold;
+    width: 120px;
+}
+
+.car_content .text {
+    width: 150px;
+}
+
+.modify_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* text-align: center; */
+}
+
+.modify_btn button {
+    width: 100px;
+    /* font-size: 14px; */
+    padding: 5px;
+    font-weight: bold;
+}
+
+.car_update:hover,
+.car_show_more:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+.car_suspend:hover {
+    background-color: rgb(230, 108, 108);
+}
+
+.create_new_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+
+/* ------------- create & edit ------------- */
+#create_car_form, 
+#edit_car_form {
+    /* width: 50%; */
+    width: 450px;
+    margin: 30px auto; /* align to center (horizontal) */
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color:azure;
+}
+
+
+/* #edit_acc_form .suspend_row, 
+#edit_profile_form .suspend_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+} */
+
+/* #suspend_acc_btn, 
+#suspend_profile_btn {
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+#create_car_form form, 
+#edit_car_form form {
+    padding: 0 10px;
+}
+
+#create_car_form table,  
+#edit_car_form table {
+    width: 100%;
+}
+
+#create_car_form tr, 
+#edit_car_form tr {
+    height: 35px;
+}
+
+#create_car_form label , 
+#edit_car_form label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#create_car_form .field_input, 
+#edit_car_form .field_input {
+    width: 65%;
+}
+
+#create_car_action, 
+#edit_car_action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#create_car_action button, 
+#edit_car_action button {
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit_create_btn:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+#cancel_create_btn:hover , 
+#discard_edit_btn:hover
+/* .suspend_btn:hover  */
+{
+    background-color: rgb(230, 108, 108);
+}
+
+#save_edit_btn:hover {
+    background-color: rgb(159, 255, 189);
+} 
