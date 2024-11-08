@@ -22,7 +22,10 @@
 	<div id="edit_profile_form">
 		<div class="title_row">
 			<h2>Edit Profile</h2>
-			<a href="viewProfile.html"><i class="fa-solid fa-xmark"></i></a>
+			<a href="viewProfileList.html"><i class="fa-solid fa-xmark"></i></a>
+		</div>
+		<div class="suspend_row">
+			<button id="suspend_profile_btn" onclick="window.location.href='#'">Suspend Profile</button>
 		</div>
 
 		<form name="edit_profile" onsubmit="" method="post">
@@ -51,7 +54,7 @@
 		</form>
 
 		<div id="edit_profile_action">
-			<button id="discard_edit_profile_btn" onclick="window.location.href='viewProfile.html'">Discard
+			<button id="discard_edit_profile_btn" onclick="window.location.href='viewProfileList.html'">Discard
 				Changes</button>
 			<button type="submit" id="save_edit_profile_btn" onclick="window.location.href='viewProfileList.html'">Save
 				Changes</button>

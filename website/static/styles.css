@@ -50,16 +50,17 @@ h2 {
     margin: 20px 0;
 }
 
-/* --- Form - login & create account & view account info ----- */
+/* --- login & create & edit (acc & profile)----- */
 #login_form, 
 #logout_mess, 
 #create_acc_form, 
-#view_acc_info, 
+/* #view_acc_info,  */
 #edit_acc_form, 
 #create_profile_form, 
-#view_profile_info,
+/* #view_profile_info, */
 #edit_profile_form {
-    width: 350px;
+    width: 50%;
+    /* width: 350px; */
     /* text-align: center; */
     margin: 30px auto; /* align to center (horizontal) */
     border: 2px solid;
@@ -68,22 +69,57 @@ h2 {
     background-color:azure;
 }
 
+
+#edit_acc_form .suspend_row, 
+#edit_profile_form .suspend_row {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* text-align: center; */
+    justify-content: end;
+    width: 100%;
+}
+
+/* .suspend_btn  */
+#suspend_acc_btn, 
+#suspend_profile_btn {
+    /* width: 100px; */
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .suspend_btn {
+    align-self: center;
+    position: absolute;
+    right: 20px;
+    width: 100px;
+    padding: 3px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+
 #login_form form, 
 #create_acc_form form, 
-#view_acc_info form, 
+/* #view_acc_info form,  */
 #edit_acc_form form, 
 #create_profile_form form, 
-#view_profile_info form, 
+/* #view_profile_info form,  */
 #edit_profile_form form {
     padding: 0 10px;
 }
 
 #login_form table, 
 #create_acc_form table, 
-#view_acc_info table, 
+/* #view_acc_info table,  */
 #edit_acc_form table, 
-#create_profile_form table
-#view_profile_info table, 
+#create_profile_form table, 
+/* #view_profile_info table,  */
 #edit_profile_form table {
     width: 100%;
 }
@@ -91,40 +127,42 @@ h2 {
 
 #login_form tr, 
 #create_acc_form tr, 
-#view_acc_info tr, 
+/* #view_acc_info tr,  */
 #edit_acc_form tr, 
 #create_profile_form tr, 
-#view_profile_info tr, 
+/* #view_profile_info tr,  */
 #edit_profile_form tr {
     height: 35px;
 }
 
 #login_form label,
 #create_acc_form label, 
-#view_acc_info label, 
+/* #view_acc_info label,  */
 #edit_acc_form label, 
 #create_profile_form label, 
-#view_profile_info label, 
+/* #view_profile_info label,  */
 #edit_profile_form label {
     font-weight: bold;
     font-size: 18px;
+    /* width: 35%; */
 }
 
-#logout_mess span {
-    font-weight: bold;
+#logout_text {
+    /* font-weight: bold; */
     font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #login_form .field_input, 
 #create_acc_form .field_input, 
-#view_acc_info .field_text, 
+/* #view_acc_info .field_text,  */
 #edit_acc_form .field_input, 
 #create_profile_form .field_input, 
-#view_profile_info .field_text, 
+/* #view_profile_info .field_text,  */
 #edit_profile_form .field_input {
     width: 65%;
 }
-
 
 #login_info, 
 #logout_action, 
@@ -143,12 +181,12 @@ h2 {
 #login_info button, 
 #logout_action button, 
 #create_acc_action button, 
-#modify_acc_action button, 
+/* #modify_acc_action button,  */
 #edit_acc_action button,
 #create_profile_action button, 
-#modify_profile_action button, 
+/* #modify_profile_action button,  */
 #edit_profile_action button {
-    font-size: 15px;
+    /* font-size: 15px; */
     font-weight: bold;
     width: 100px;
     text-align: center;
@@ -161,19 +199,21 @@ h2 {
 #login_btn:hover, 
 #cancel_logout_btn:hover, 
 #submit_create_acc_btn:hover, 
-#edit_acc_btn:hover, 
-#submit_create_profile_btn:hover, 
-#edit_profile_btn:hover {
+/* #edit_acc_btn:hover,  */
+#submit_create_profile_btn:hover 
+/* #edit_profile_btn:hover  */
+{
     background-color: rgb(159, 207, 255);
 }
 
 #logout_btn:hover, 
 #cancel_create_acc_btn:hover, 
-#suspend_acc_btn:hover, 
+/* #suspend_acc_btn:hover,  */
 #discard_edit_acc_btn:hover, 
 #cancel_create_profile_btn:hover, 
-#suspend_profile_btn:hover, 
-#discard_edit_profile_btn:hover {
+/* #suspend_profile_btn:hover,  */
+#discard_edit_profile_btn:hover, 
+.suspend_btn:hover {
     background-color: rgb(230, 108, 108);
 }
 
