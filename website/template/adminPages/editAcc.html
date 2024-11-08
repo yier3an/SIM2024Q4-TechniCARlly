@@ -22,11 +22,17 @@
 	<div id="edit_acc_form">
 		<div class="title_row">
 			<h2>Edit Account</h2>
-			<a href="viewAcc.html"><i class="fa-solid fa-xmark"></i></a>
+			<a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
+		</div>
+		<div class="suspend_row">
+			<button id="suspend_acc_btn" onclick="window.location.href='suspendAcc.html'">Suspend Account</button>
 		</div>
 
 		<form name="edit_acc" onsubmit="" method="post">
 			<table>
+				<!-- <tr class="suspend_row">
+					
+				</tr> -->
 				<tr>
 					<td>
 						<label for="usertype">User Type: </label>
@@ -76,7 +82,7 @@
 		</form>
 
 		<div id="edit_acc_action">
-			<button id="discard_edit_acc_btn" onclick="window.location.href='viewAcc.html'">Discard Changes</button>
+			<button id="discard_edit_acc_btn" onclick="window.location.href='viewAccList.html'">Discard Changes</button>
 			<button type="submit" id="save_edit_acc_btn" onclick="window.location.href='viewAccList.html'">Save
 				Changes</button>
 		</div>
