@@ -67,14 +67,12 @@
 /* ------------- car listing ------------- */
 .car_listing {
     width: 100%;
-    /* padding: 0 50px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .car {
-    float: left;
     width: 350px;
     border: 1px solid;
     border-radius: 5px;
@@ -107,12 +105,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* text-align: center; */
 }
 
 .modify_btn button {
     width: 100px;
-    /* font-size: 14px; */
     padding: 5px;
     font-weight: bold;
 }
@@ -142,24 +138,6 @@
     padding: 0px 20px;
     background-color:azure;
 }
-
-
-/* #edit_acc_form .suspend_row, 
-#edit_profile_form .suspend_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    width: 100%;
-} */
-
-/* #suspend_acc_btn, 
-#suspend_profile_btn {
-    padding: 8px;
-    font-weight: bold;
-    border: 1px solid;
-    border-radius: 5px;
-    cursor: pointer;
-} */
 
 #create_car_form form, 
 #edit_car_form form {
@@ -212,7 +190,6 @@
 
 #cancel_create_btn:hover , 
 #discard_edit_btn:hover
-/* .suspend_btn:hover  */
 {
     background-color: rgb(230, 108, 108);
 }
@@ -220,3 +197,140 @@
 #save_edit_btn:hover {
     background-color: rgb(159, 255, 189);
 } 
+
+
+/* ------------- view ------------- */
+#car_detials {
+    width: 70%;
+    /* width: 450px; */
+    margin: 30px auto; /* align itself to center (horizontal) */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* align content to center (horizontal) */
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color:azure;
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.images img {
+    width: 200px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.car_detail_content {
+    margin: 10px;
+    width: 100%;
+    justify-items: center;
+}
+
+.car_detail_content span {
+    font-size: 20px;
+}
+
+.car_detail_content .label {
+    font-weight: bold;
+    width: 200px;
+}
+
+.car_detail_content .text {
+    width: 350px;
+}
+
+#view_page_action {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#view_page_action button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#back_btn:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+#suspend_btn:hover {
+    background-color: rgb(230, 108, 108);
+}
+
+
+/* ------------- rate & reveiw ------------- */
+.all_reviews {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    width: 80%;
+}
+
+.review {
+    width: 100%;
+}
+.user_info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(217, 217, 217);
+    border-radius: 50%;
+    display: flex;
+    align-items: center; /* align veritcally */
+    justify-content: center; /* align horizontally */
+    margin: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.username {
+    font-size: 24px;
+}
+
+.rate {
+    margin-left: 20px;
+}
+
+.rate i {
+    color: rgb(209, 209, 209);
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.rate .selected {
+    color: rgb(255, 222, 77);
+}
+
+.review_textbox {
+    margin: 10px;
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    min-height: 100px;
+    border-radius: 5px;
+}
+
+.review_text {
+    font-size: 18px;
+    margin: 10px;
+}

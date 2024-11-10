@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TechniCARlly</title>
+    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/agentStyle.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <span id="group_name">TechniCARlly</span>
+        <a href="agentHome.html">Home</a>
+        <a href="rateNreview.html">Rate & Review</a>
+
+        <div class="nav_item_right">
+            <a href="../logout.html" class="nav_logout">Logout</a>
+        </div>
+    </div>
+    
+    <!-- ** retrieve details from database -->
+    <div id="car_detials">
+        <div class="title_row">
+            <h2 class="listing_name">Listing name</h2>
+        </div>
+        
+        <div class="images">
+            <img src="" alt="car">
+        </div>
+
+        <div class="car_detail_content">
+            <table>
+                <tr>
+                    <td class="label"><span>Listing Name: </label></td>
+                    <td class="text"><span>car1 </label></td>
+                </tr>
+                <tr>
+                    <td class="label"><span>Model: </label></td>
+                    <td><span>model1</label></td>
+                </tr>
+                <tr>
+                    <td class="label"><span>Price: </label></td>
+                    <td><span>$1200</label></td>
+                </tr>
+                <tr>
+                    <td class="label"><span>Desctiption: </label></td>
+                    <td><span>Some Desctiption for the car</label></td>
+                </tr>
+            </table>
+
+            <div id="view_page_action">
+                <button id="suspend_btn" onclick="window.location.href='suspendCar.html'">Suspend</button>
+                <button id="back_btn" onclick="window.location.href='agentHome.html'">Back</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
