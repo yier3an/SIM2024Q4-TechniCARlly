@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+}
+
+/* --- create & edit (acc & profile)----- */
+#create_acc_form, 
+#edit_acc_form, 
+#create_profile_form, 
+#edit_profile_form {
+    /* width: 50%; */
+    width: 450px;
+    margin: 30px auto; /* align to center (horizontal) */
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color:azure;
+}
+
+
+#edit_acc_form .suspend_row, 
+#edit_profile_form .suspend_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+}
+
+#suspend_acc_btn, 
+#suspend_profile_btn {
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#create_acc_form form
+#edit_acc_form form, 
+#create_profile_form form, 
+#edit_profile_form form {
+    padding: 0 10px;
+}
+
+#create_acc_form table, 
+#edit_acc_form table, 
+#create_profile_form table, 
+#edit_profile_form table {
+    width: 100%;
+}
+
+#create_acc_form tr, 
+#edit_acc_form tr, 
+#create_profile_form tr, 
+#edit_profile_form tr {
+    height: 35px;
+}
+
+#create_acc_form label, 
+#edit_acc_form label, 
+#create_profile_form label, 
+#edit_profile_form label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#create_acc_form .field_input, 
+#edit_acc_form .field_input, 
+#create_profile_form .field_input, 
+#edit_profile_form .field_input {
+    width: 65%;
+}
+
+#create_acc_action, 
+#edit_acc_action, 
+#create_profile_action, 
+#edit_profile_action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#create_acc_action button, 
+#edit_acc_action button,
+#create_profile_action button, 
+#edit_profile_action button {
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit_create_acc_btn:hover, 
+#submit_create_profile_btn:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+#cancel_create_acc_btn:hover, 
+#discard_edit_acc_btn:hover, 
+#cancel_create_profile_btn:hover, 
+#discard_edit_profile_btn:hover, 
+.suspend_btn:hover {
+    background-color: rgb(230, 108, 108);
+}
+
+#save_edit_acc_btn:hover, 
+#save_edit_profile_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+/* ------------- Home page ------------- */
+#modify_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px; 
+}
+
+#modify_btn button {
+    font-size: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#modify_btn button:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+
+/* ------------- View List (Acc & Profile) ------------- */
+.header_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.header_row h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header_row .create_new_btn {
+    align-self: center;
+    position: absolute;
+    right: 20px;
+    width: 120px;
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header_row .create_new_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+.search {
+    width: 100%;
+    text-align: center;
+}
+
+.search form {
+    display: inline-block;
+    width: 80%;
+}
+
+.search input {
+    width: 70%;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search button {
+    font-size: 16px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+#accList, 
+#profileList {
+    width: 100%;
+}
+
+#accList table,
+#profileList table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#accList tr, #accList th, #accList td,
+#profileList te, #profileList th, #profileList td {
+    border: 1px solid;
+}
+
+#accList a, 
+#profileList a {
+    color: black;
+}
+
+#accList a:hover,
+#profileList a:hover {
+    color: rgb(103, 174, 255);
+}
+ 
