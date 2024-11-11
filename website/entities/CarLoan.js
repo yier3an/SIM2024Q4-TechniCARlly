@@ -1,15 +1,8 @@
 class CarLoan {
-	constructor(carPrice, dPaymt, intRate, loanTerm) {
-		this.carPrice = carPrice;
-		this.dPaymt = dPaymt;
-		this.intRate = intRate;
-		this.loanTerm = loanTerm;
-	}
+	calc(carPrice, dPaymt, intRate, loanTerm) {
+		let toPay = (carPrice - dPaymt);
+		let interest = toPay * intRate;
 
-	calc() {
-		let toPay = (this.carPrice - this.dPaymt);
-		let interest = toPay * this.intRate;
-
-		return (toPay + interest) / this.loanTerm;
+		return (toPay + interest) / loanTerm;
 	}
 }
