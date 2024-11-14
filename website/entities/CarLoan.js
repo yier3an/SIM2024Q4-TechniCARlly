@@ -1,8 +1,8 @@
 class CarLoan {
 	calc(carPrice, dPaymt, intRate, loanTerm) {
 		let toPay = (carPrice - dPaymt);
-		let interest = toPay * intRate;
+		let total = toPay * (Math.pow(1 + (intRate / 100.0)), loanTerm);
 
-		return (toPay + interest) / loanTerm;
+		return total;
 	}
 }

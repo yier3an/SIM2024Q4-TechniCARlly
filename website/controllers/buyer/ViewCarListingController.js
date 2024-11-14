@@ -3,7 +3,7 @@ class ViewShortlistController {
 		this.sl = new Shortlist();
 	}
 
-	viewShortlist() {
-		//
+	viewShortlist(carListingID) {
+		return this.sl.viewShortlist(carListingID);
 	}
 }
