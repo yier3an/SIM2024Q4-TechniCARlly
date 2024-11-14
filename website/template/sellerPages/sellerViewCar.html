@@ -4,15 +4,15 @@
 <head>
     <title>TechniCARlly</title>
     <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/agentStyle.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/sellerStyle.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="navbar">
         <span id="group_name">TechniCARlly</span>
-        <a href="agentHome.html">Home</a>
-        <a href="rateNreview.html">Rate & Review</a>
+        <a href="sellerHome.html">Home</a>
+        <!-- <a href="rateNreview.html">Rate & Review</a> -->
 
         <div class="nav_item_right">
             <a href="../logout.html" class="nav_logout">Logout</a>
@@ -47,13 +47,25 @@
                     <td class="label"><span>Desctiption: </span></td>
                     <td><span>Some Desctiption for the car</span></td>
                 </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td class="label"><span>Views: </span></td>
+                    <td><span>1</span></td>
+                </tr>
+                <tr>
+                    <td class="label"><span>Shortlists: </span></td>
+                    <td><span>2</span></td>
+                </tr>
             </table>
 
             <div id="view_page_action">
-                <button id="suspend_btn" onclick="window.location.href='suspendCar.html'">Suspend</button>
-                <button id="back_btn" onclick="window.location.href='agentHome.html'">Back</button>
+                <button id="rate_btn" onclick="window.location.href='sellerReview.html'">Rate & Review</button>
+                <button id="back_btn" onclick="window.location.href='sellerHome.html'">Back</button>
             </div>
         </div>
+
 
     </div>
 
