@@ -1,9 +1,6 @@
-// entities/useraccount.js
-
 import { auth, db } from "../../firebaseConfig.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 import { setDoc, doc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-
 
 
 export async function createUser(email, password, userType) {
@@ -25,7 +22,6 @@ export async function createUser(email, password, userType) {
 // Usage example for creating a new admin:
 // createUser('admin@example.com', 'password123', 'admin');
 
-/*
 class userAccount {
 	constructor(name, userType, username, pwd) {
 		// this.name = name;
@@ -35,7 +31,7 @@ class userAccount {
 	}
 
 	// accessors
-	get account() {
+	get getAccount() {
 		return this;
 	}
 
@@ -70,5 +66,8 @@ class userAccount {
 	confirmLogout() {
 		// logout for this instance
 	}
+
+	confirmSuspend(username) {
+		//
+	}
 }
-*/

@@ -5,31 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
-// function suspend() {
-// 	const suspendAcc = new suspendAccTestUI();
-// 	suspendAcc.displayPopup();
-// }
-
-
 class suspendAccTestUI {
 	constructor() {
 		this.suspendAccTestController = new SuspendAccTestController()
-		username = document.forms["field_input"]["email"].value;
+		this.username = document.forms["edit_acc"]["email"].value;
 	}
 
 	displayPopup() {
 		let confirmation = "Confirm suspension of user account?";
 
 		if (confirm(confirmation) == true) {
-			suspendSuccess();
+			this.suspendSuccess();
 		}
 		else {
-			suspendCancel();
+			this.suspendCancel();
 		}
 	}
 
 	suspendSuccess() {
-		this.suspendAccTestController.confirmSuspend(username);
+		this.suspendAccTestController.confirmSuspend(this.username);
 		alert("Account suspended");
 	}
 
