@@ -2,34 +2,38 @@
     margin: 0;
 }
 
-/* ------------- Home ------------- */
-.header_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* ------------- serach bar ------------- */
+.search {
+    margin-top: 20px;
     width: 100%;
-}
-
-.header_row h2 {
     text-align: center;
-    margin: 20px 0;
 }
 
-.header_row .create_new_btn {
-    align-self: center;
-    position: absolute;
-    right: 20px;
-    width: 120px;
-    padding: 5px;
-    font-weight: bold;
+.search form {
+    display: inline-block;
+    width: 80%;
+}
+
+.search input {
+    width: 70%;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search button {
+    font-size: 16px;
+    height: 25px;
     border: 1px solid;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.header_row .create_new_btn:hover {
-    background-color: rgb(159, 255, 189);
+.search button:hover {
+    background-color: rgb(159, 207, 255);
 }
+
 
 /* ------------- car listing ------------- */
 .car_listing {
@@ -70,27 +74,29 @@
 
 .modify_btn {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+}
+
+.shortlist_modify_btn {
+    display: flex;
     justify-content: end;
 }
 
-.modify_btn button {
-    width: 100px;
+.modify_btn button,
+.shortlist_modify_btn button {
+    width: 120px;
     padding: 5px;
     font-weight: bold;
 }
 
+.save_shortlist {
+    justify-self: left;
+}
+
+.save_shortlist:hover,
 .car_show_more:hover {
     background-color: rgb(159, 207, 255);
 }
-
-/* .car_suspend:hover {
-    background-color: rgb(230, 108, 108);
-}
-
-.create_new_btn:hover {
-    background-color: rgb(159, 255, 189);
-} */
 
 
 /* ------------- view ------------- */
@@ -256,9 +262,6 @@ fieldset {
     padding: 0;
 }
 
-/* body{ margin: 20px; } */
-/* h1 { font-size: 1.5em; margin: 10px; } */
-
 .rating {
     border: none;
     float: left;
@@ -299,3 +302,61 @@ fieldset {
 .rating>input:checked~label:hover~label {
     color: #FFED85;
 }
+
+
+/* ------------- loan calculator ------------- */
+#calculate_form {
+    width: 60%;
+    margin: 0 auto; /* align to center (horizontal) */
+    justify-content: center; /* align content to center (horizontal) */
+}
+
+#calculate_form form {
+    padding: 0 10px;
+}
+
+#calculate_form table {
+    width: 100%;
+    justify-content: center;
+}
+
+#calculate_form tr {
+    height: 35px;
+}
+
+#calculate_form td {
+    width: 50%;
+}
+
+#calculate_form label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#calculate_form input,
+#calculate_form select {
+    width: 65%;
+}
+
+#calculator_action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#calculator_action button {
+    font-size: 18px;
+    font-weight: bold;
+    width: 130px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#calculate_btn:hover {
+    background-color: rgb(159, 255, 189);
+} 

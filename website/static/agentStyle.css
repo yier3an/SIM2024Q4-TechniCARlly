@@ -104,7 +104,7 @@
 .modify_btn {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .modify_btn button {

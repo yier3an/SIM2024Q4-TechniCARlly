@@ -4,24 +4,26 @@
 <head>
     <title>TechniCARlly</title>
     <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/sellerStyle.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/buyerStyle.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <div class="navbar">
-        <span id="group_name">TechniCARlly</span>
-        <a href="sellerHome.html">Home</a>
+		<span id="group_name">TechniCARlly</span>
+		<a href="buyerHome.html">Home</a>
+		<a href="buyerShortlist.html">Shortlist</a>
+		<a href="loanCalculator.html">Loan Calculator</a>
 
-        <div class="nav_item_right">
-            <a href="../logout.html" class="nav_logout">Logout</a>
-        </div>
-    </div>
+		<div class="nav_item_right">
+			<a href="../logout.html" class="nav_logout">Logout</a>
+		</div>
+	</div>
 
     <div id="review_form">
         <div class="title_row">
             <h2>Rate & Review Agent</h2>
-            <a href="sellerViewCar.html"><i class="fa-solid fa-xmark"></i></a>
+            <a href="buyerViewCar.html"><i class="fa-solid fa-xmark"></i></a>
         </div>
 
         <form name="review_agent" onsubmit="" method="post">
@@ -47,14 +49,6 @@
                             <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
                             <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
                         </fieldset>
-                        <!-- <div class="rating">
-                            <input type="number" name="rating" hidden>
-                            <i class='fa fa-star' style="--i: 0;"></i>
-                            <i class='bx bx-star star' style="--i: 1;"></i>
-                            <i class='bx bx-star star' style="--i: 2;"></i>
-                            <i class='bx bx-star star' style="--i: 3;"></i>
-                            <i class='bx bx-star star' style="--i: 4;"></i>
-                        </div> -->
                     </td>
                 </tr>
 
@@ -64,7 +58,6 @@
                     </td>
                     <td class="field_input">
                         <textarea name="review" rows="4" cols="22" required></textarea>
-                        <!-- <input type="text" id="review" name="review" required /> -->
                     </td>
                 </tr>
 
@@ -72,8 +65,8 @@
         </form>
 
         <div id="review_agent_action">
-            <button id="cancel_review_btn" onclick="window.location.href='sellerViewCar.html'">Cancel</button>
-            <button type="submit" id="submit_review_btn" onclick="window.location.href='sellerViewCar.html'">Submit</button>
+            <button id="cancel_review_btn" onclick="window.location.href='buyerViewCar.html'">Cancel</button>
+            <button type="submit" id="submit_review_btn" onclick="window.location.href='buyerViewCar.html'">Submit</button>
         </div>
     </div>
 
