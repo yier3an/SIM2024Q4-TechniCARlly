@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TechniCARlly</title>
+    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/buyerStyle.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <span id="group_name">TechniCARlly</span>
+        <a href="buyerHome.html">Home</a>
+        <a href="buyerShortlist.html">Shortlist</a>
+        <a href="loanCalculator.html" class="active">Loan Calculator</a>
+
+        <div class="nav_item_right">
+            <a href="../logout.html" class="nav_logout">Logout</a>
+        </div>
+    </div>
+
+    <div>
+        <div class="header_row">
+            <h2>Loan Calculator</h2>
+        </div>
+
+        <div id="calculate_form">
+            <form name="calculate">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="carPrice">Car Price ($): </label>
+                        </td>
+                        <td class="field_input">
+                            <input type="number" id="carPrice" name="carPrice" min="0"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="downPayment">Down Payment ($): </label>
+                        </td>
+                        <td class="field_input">
+                            <input type="number" id="downPayment" name="downPayment" min="0"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="interestRate">Interest Rate (%): </label>
+                        </td>
+                        <td class="field_input">
+                            <input type="number" id="interestRate" name="interestRate" min="0" max="100"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="loanTerm">Loan Term: </label>
+                        </td>
+                        <td class="field_input">
+                            <select id="terms">
+                                <option value="6">6 Months</option>
+                                <option value="12">12 Months (1 year)</option>
+                                <option value="18">18 Months (1.5 year)</option>
+                                <option value="24">24 Months (2 year)</option>
+                                <option value="30">30 Months (2.5 year)</option>
+                                <option value="36">36 Months (3 year)</option>
+                                <option value="42">42 Months (3.5 year)</option>
+                                <option value="48">48 Months (4 year)</option>
+                                <option value="54">54 Months (4.5 year)</option>
+                                <option value="60">60 Months (5 year)</option>
+                                <option value="66">66 Months (5.5 year)</option>
+                                <option value="72">72 Months (6 year)</option>
+                                <option value="78">78 Months (6.5 year)</option>
+                                <option value="84">84 Months (7 year)</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <div id="calculator_action">
+                <button type="submit" id="calculate_btn">Calculate</button>
+                    <!-- display a popup showing the loan -->
+            </div>
+        </div>
+
+</body>
+
+</html>

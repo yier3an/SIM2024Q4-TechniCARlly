@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+}
+
+/* ------------- Home ------------- */
+.header_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.header_row h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header_row .create_new_btn {
+    align-self: center;
+    position: absolute;
+    right: 20px;
+    width: 120px;
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header_row .create_new_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+/* ------------- car listing ------------- */
+.car_listing {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.car {
+    width: 350px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 20px 20px;
+}
+
+.car img {
+    width: 100%;
+    height: 250px;
+}
+
+.car_content {
+    margin: 10px;
+}
+
+.car_content span {
+    font-size: 18px;
+}
+
+.car_content .label {
+    font-weight: bold;
+    width: 120px;
+}
+
+.car_content .text {
+    width: 150px;
+}
+
+.modify_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.modify_btn button {
+    width: 100px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.car_show_more:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+/* .car_suspend:hover {
+    background-color: rgb(230, 108, 108);
+}
+
+.create_new_btn:hover {
+    background-color: rgb(159, 255, 189);
+} */
+
+
+/* ------------- view ------------- */
+#car_detials {
+    width: 70%;
+    /* width: 450px; */
+    margin: 30px auto;
+    /* align itself to center (horizontal) */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align content to center (horizontal) */
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color: azure;
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.images img {
+    width: 200px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.car_detail_content {
+    margin: 10px;
+    width: 100%;
+    justify-items: center;
+}
+
+.car_detail_content span {
+    font-size: 20px;
+}
+
+.car_detail_content .label {
+    font-weight: bold;
+    width: 200px;
+}
+
+.car_detail_content .text {
+    width: 350px;
+}
+
+#view_page_action {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#view_page_action button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#rate_btn:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+#back_btn:hover {
+    background-color: rgb(159, 255, 189);
+}
+
+/* ------------- review ------------- */
+#review_form {
+    /* width: 50%; */
+    width: 450px;
+    margin: 30px auto;
+    /* align to center (horizontal) */
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color: azure;
+}
+
+#review_form form {
+    padding: 0 10px;
+}
+
+#review_form table {
+    width: 100%;
+}
+
+#review_form tr {
+    height: 35px;
+}
+
+#review_form label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#review_form .text {
+    font-size: 18px;
+}
+
+.rating {
+    border: none;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+#review_form .field_input {
+    width: 65%;
+}
+
+#review_agent_action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#review_agent_action button {
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit_review_btn:hover {
+    background-color: rgb(159, 207, 255);
+}
+
+#cancel_review_btn:hover {
+    background-color: rgb(230, 108, 108);
+}
+
+
+/* ------------- review star ------------- */
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+/* body{ margin: 20px; } */
+/* h1 { font-size: 1.5em; margin: 10px; } */
+
+.rating {
+    border: none;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
+}
+
+.rating>input:checked~label,
+/* show gold star when clicked */
+.rating:not(:checked)>label:hover,
+/* hover current star */
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+/* hover previous stars in list */
+.rating>input:checked+label:hover,
+/* hover current star when changing rating */
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+/* lighten current selection */
+.rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
