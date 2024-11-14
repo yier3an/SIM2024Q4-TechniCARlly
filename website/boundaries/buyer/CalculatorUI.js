@@ -1,13 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("login_btn").addEventListener(
+	document.getElementById("calculate").addEventListener(
 		"click", () => {
 			const calculator = new CalculatorUI();
 			calculator.displayLoanAmt();
-
-			// ref
-			const email = document.getElementById("username").value;
-			const password = document.getElementById("password").value;
-			loginController(email, password);
 		}
 	);
 });
@@ -15,10 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 class CalculatorUI {
 	constructor() {
 		this.calcController = new CalculatorController();
-		carPrice = document.forms["login"]["username"].value;
-		dPaymt = document.forms["login"]["password"].value;
-		intRate = document.forms["login"]["password"].value;
-		loanTerm = document.forms["login"]["password"].value;
+		carPrice = document.forms["calculator"]["carPrice"].value;
+		dPaymt = document.forms["calculator"]["dPaymt"].value;
+		intRate = document.forms["calculator"]["intRate"].value;
+		loanTerm = document.forms["calculator"]["loanTerm"].value;
 	}
 
 	getLoanAmt(carPrice, dPaymt, intRate, loanTerm) {
@@ -26,6 +21,8 @@ class CalculatorUI {
 	}
 
 	displayLoanAmt() {
-		this.getLoanAmt(carPrice, dPaymt, intRate, loanTerm)
+		loanAmt = this.getLoanAmt(carPrice, dPaymt, intRate, loanTerm)
+
+		// display onto html
 	}
 }
