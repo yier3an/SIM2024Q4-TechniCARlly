@@ -1,7 +1,7 @@
 import { ViewNoController } from "../../controllers/seller/ViewNoController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let viewsUI = new ViewNoUI();
+	const viewsUI = new ViewNoUI();
 	viewsUI.getViews(CarListingID);
 });
 

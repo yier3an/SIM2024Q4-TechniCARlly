@@ -1,7 +1,7 @@
 import { ViewShortlistController } from "../../controllers/buyer/SearchShortlistController";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let shortlist = new ViewCarListingUI();
+	const shortlist = new ViewCarListingUI();
 	// var x = document.getElementById("searchError");
 	// if (x.style.display === "none") {
 	// 	x.style.display = "block";

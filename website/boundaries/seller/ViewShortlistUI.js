@@ -1,7 +1,7 @@
 import { ViewShortlistController } from "../../controllers/seller/ViewShortlistController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let viewsUI = new ViewShortlistUI();
+	const viewsUI = new ViewShortlistUI();
 	viewsUI.getViews(CarListingID);
 });
 

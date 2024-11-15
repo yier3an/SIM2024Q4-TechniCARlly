@@ -1,5 +1,10 @@
 // entities/CarListing.js
 
+import {
+	getFirestore, doc, set, getDoc, updateDoc,
+	deleteDoc, collection, query, where, getDocs
+} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+
 import firebase from "firebase/app";
 import "firebase/firestore";
 
