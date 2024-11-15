@@ -22,7 +22,7 @@ class ViewCarListingUI {
 		var i = 0;
 
 		if (!Array.isArray(listing) || !listing.length) {
-			document.getElementById("displayError").style.display = "block";
+			//document.getElementById("displayError").style.display = "block";
 		}
 		else {
 			document.getElementById("displayError").style.display = "none";
