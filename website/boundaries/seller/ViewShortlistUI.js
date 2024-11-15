@@ -17,6 +17,6 @@ class ViewShortlistUI {
 	}
 
 	displaySL() {
-		document.getElementById("views").value = this.views
+		document.getElementById("shortlist").value = this.views
 	}
 }

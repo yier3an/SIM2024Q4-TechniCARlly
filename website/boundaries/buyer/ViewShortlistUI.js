@@ -1,14 +1,9 @@
 import { ViewShortlistController } from "../../controllers/buyer/SearchShortlistController";
 
 document.addEventListener("DOMContentLoaded", () => {
-	const shortlist = new ViewCarListingUI();
-	// var x = document.getElementById("searchError");
-	// if (x.style.display === "none") {
-	// 	x.style.display = "block";
-	// } else {
-	// 	x.style.display = "none";
-	// }
-	shortlist.displayListing();
+	const shortlist = new ViewShortlistUI();
+
+	shortlist.viewShortlist();
 });
 
 class ViewShortlistUI {
@@ -16,21 +11,53 @@ class ViewShortlistUI {
 		this.viewSL = new ViewShortlistController();
 	}
 
+	viewShortlist() {
+		this.carList = this.viewCarListing.getCarListing();
+
+		this.displayListing();
+	}
+
 	displayShortlist() {
-		let listings = this.viewController.getCarListing();
-		console.log(listings);
+		const listing = document.getElementById("listingContainer");
+		var i = 0;
 
-		let listingsContainer = document.getElementById("car_listing");
+		if (!Array.isArray(listing) || !listing.length) {
+			//document.getElementById("displayError").style.display = "block";
+		}
+		else {
+			document.getElementById("displayError").style.display = "none";
 
-		listings.forEach(listing => {
-			const childEle = document.createElement("div");
-			childEle.innerHTML = `
-				<h3>${listing.listingName}</h3>
-				<p>${listing.model}</p>
-				<p>Price: ${listing.price}</p>
-			`;
+			if (listing.innerHTML == "" || listing.innerHTML == null) {
+				for (item in this.carList) {
 
-			listingsContainer.appendChild(childEle);
-		});
+					let image = document.createElement("img");
+					if (i > 6) {
+						i = 0;
+					}
+					image.setAttribute("src", "../../static/asset/" + i + ".jpg");
+					listing.appendChild(image);
+					i++;
+
+					let div1 = document.createElement("div");
+					div1.setAttribute("class", "car_content");
+
+					let table = document.createElement("table");
+					table.setAttribute("id", "listing_table");
+
+					let row = document.createElement("tr");
+					let clName = document.createElement("td");
+					clName.textContent = "Listing Name: " + item.listingName;
+					row.appendChild(clName);
+					table.appendChild(row);
+
+					div1.appendChild(table);
+
+					listing.appendChild(div1);
+				}
+			}
+			else {
+				listing.innerHTML = "";
+			}
+		}
 	}
 }

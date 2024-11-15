@@ -1,36 +1,52 @@
 // entities/Shortlist.js
 
-import {
-	getFirestore, doc, set, getDoc, updateDoc,
-	deleteDoc, collection, query, where, getDocs
-} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-
-import firebase from "firebase/app";
-import "firebase/firestore";
+import { db, doc, setDoc, getDoc } from "../../firebaseConfig.js";
 
 export class Shortlist {
-	constructor() {
-
+	constructor(emptyArray = []) {
+		this.shortL = emptyArray;
 	}
 
-	async saveListing(carListingID, listingName, carModel, price, seller, buyer) {
-		getDB();
-		let newListingRef = db.collection("ShortList").doc();
-		await newListingRef.set(carListingID, listingName, carModel, price, seller, buyer);
-		return newListingRef.id;
+	async saveListing(carListingID, buyer) {
+		let cars = await this.getSLcar(buyer, carListingID);
+
+		for (i in cars) {
+			this.shortL.push(i);
+		}
+
+		this.shortL.push(carListingID);
+
+		const docRef = doc(db, "ShortList", buyer);
+		setDoc(docRef, {
+			buyer: buyer,
+			carListingID: this.shortL
+		}, { merge: true });
 	}
 
-	async getShortlist(ShortlistID) {
-		let listingDoc = await db.collection("ShortList").doc(shortListID).get();
-		return listingDoc.exists ? listingDoc.data() : null;
+	async getShortlist(buyer) {
+		const docRef = doc(db, "ShortList", ShortlistID);
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			return docSnap.data();
+		} else {
+			return null;
+		}
 	}
 
-	async getSLcar(ShortlistID) {
-		let listingDoc = await db.collection("ShortList").doc(shortListID).get();
-		return listingDoc.exists ? listingDoc.data() : null;
+	async getSLcar(buyer, carListingID) {
+		const docRef = doc(db, "ShortList", ShortlistID);
+
+		const q = query(collection(db, ShortlistID), where("carListingID", "==", carListingID));
+
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			console.log("Document data:", docSnap.data().carListingID);
+			return docSnap.data().carListingID;
+		} else {
+			console.log("No such document!");
+		}
 	}
 
-	getDB() {
-		this.db = getFirestore();
-	}
 }

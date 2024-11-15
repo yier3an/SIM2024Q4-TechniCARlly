@@ -1,12 +1,6 @@
 // entities/CarListing.js
 
-import {
-	getFirestore, doc, set, getDoc, updateDoc,
-	deleteDoc, collection, query, where, getDocs
-} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-
-import firebase from "firebase/app";
-import "firebase/firestore";
+import { db, doc, getDoc, getDocs, setDoc, collection } from "../../firebaseConfig.js";
 
 export class CarListing {
 	constructor(id, title, description, price, agentId) {
@@ -15,6 +9,18 @@ export class CarListing {
 		this.description = description;
 		this.price = price;
 		this.agentId = agentId;
+	}
+
+	async getCarListing() {
+		const array = [];
+		const docRef = collection(db, "CarListing");
+		const docSnap = await getDocs(docRef);
+
+		docSnap.forEach((doc) => {
+			array.push(doc);
+		});
+
+		return array;
 	}
 
 	static async createListing(listingData) {

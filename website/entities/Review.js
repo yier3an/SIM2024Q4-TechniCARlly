@@ -1,26 +1,16 @@
 // entities/Review.js
 
-import firebase from "firebase/app";
-import "firebase/firestore";
+import { db, doc, setDoc, getDoc } from "../../firebaseConfig.js";
 
 export class Review {
-
-	constructor() {
-		this.db = getFirestore();
-	}
-
-	createReview(agent, reviewer, rating, review) {
-		let ref = this.db.collection("Review").doc();
-		ref.set({
+	async createReview(agent, reviewer, rating, review) {
+		const docRef = doc(db, "ShortList", reviewer);
+		setDoc(docRef, {
 			agent: agent,
 			reviewer: reviewer,
 			rating: rating,
 			review: review
-		})
-	}
-
-	getDB() {
-		this.db = getFirestore();
+		}, { merge: true });
 	}
 
 	// getReview(agent) {

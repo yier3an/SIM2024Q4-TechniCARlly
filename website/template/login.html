@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>TechniCARlly</title>
 	<link rel="stylesheet" href="../static/styles.css" type="text/css" />
@@ -36,10 +37,10 @@
 	</div>
 
 	<!-- Button to Create an Admin User for Testing -->
-	<div id="create_admin_form">
+	<!-- <div id="create_admin_form">
 		<h3>Create Admin User (Testing)</h3>
 		<button id="createAdminBtn">Create Admin User</button>
-	</div>
+	</div> -->
 
 	<script type="module">
 		// Import the auth and db instances from firebaseConfig
@@ -80,7 +81,7 @@
 					email: email,
 					role: role,
 				});
-				
+
 				alert("Admin user 'tester' created successfully");
 			} catch (error) {
 				alert("Error creating admin user: " + error.message);
@@ -95,4 +96,5 @@
 	<script type="module" src="../boundaries/loginUI.js"></script>
 
 </body>
+
 </html>

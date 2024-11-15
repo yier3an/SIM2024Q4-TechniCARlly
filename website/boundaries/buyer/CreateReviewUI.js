@@ -1,9 +1,9 @@
-import { CreateReviewController } from "../../controllers/buyer/CreateReviewController";
+import { CreateReviewController } from "../../controllers/buyer/CreateReviewController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("submit_review_btn").addEventListener("click", () => {
 		console.log("clicked.");
-		let agent = document.getElementById("agent").value;
+		let agent = document.getElementById("agentName").value;
 		let reviewer = "testReview";
 		let rating = document.getElementById("rating").value;
 		let review = document.getElementById("review").value;
@@ -26,6 +26,6 @@ class createReviewUI {
 	reviewSuccess() {
 		alert("Review Submitted.");
 
-		window.location.href = "/buyerViewCar.html"
-	}
+		window.location.href = "buyerViewCar.html"
+	} 0
 }

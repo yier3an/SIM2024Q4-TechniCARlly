@@ -2,10 +2,10 @@ import { Review } from "../../entities/Review.js";
 
 export class CreateReviewController {
 	constructor() {
-		this.r = new Review();
+		this.rev = new Review();
 	}
 
-	createReview(rating, review) {
-		return this.r.createReview(rating, review);
+	createReview(agent, reviewer, rating, review) {
+		return this.rev.createReview(agent, reviewer, rating, review);
 	}
 }

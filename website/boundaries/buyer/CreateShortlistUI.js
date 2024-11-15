@@ -2,12 +2,13 @@ import { CreateShortlistController } from "../../controllers/buyer/CreateShortli
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("saveSL").addEventListener("click", () => {
-		console.log("clicked.");
-		let save = document.getElementById("saveSL");
-		let carListingID = document.getElementById("carListingID").value;
+		let save = document.getElementById("saveSL").textContent;
+		console.log(save);
+		let buyer = "testing shortlist";
+		let carListingID = document.getElementById("carListingID").textContent;
 
 		const createSL = new CreateShortlistUI();
-		createSL.saveListing(carListingID, save);
+		createSL.saveListing(carListingID, buyer, save);
 	});
 });
 
@@ -17,19 +18,24 @@ class CreateShortlistUI {
 		this.saveStatus = "";
 	}
 
-	saveListing(carListingID, save) {
-		this.slController.saveListing(carListingID);
+	saveListing(carListingID, buyer, save) {
+		this.slController.saveListing(carListingID, buyer);
 		this.saveStatus = save;
+		console.log(this.saveStatus);
 		this.saveSuccess();
 	}
 
 	saveSuccess() {
-		if (this.saveStatus.value == "save") {
-			this.saveStatus.value = "saved";
+		if (this.saveStatus.toLowerCase() == "save") {
+			this.saveStatus = "Saved";
+
+			console.log(this.saveStatus);
 		}
 		else {
-			this.saveStatus.value = "saved";
+			this.saveStatus = "save";
 		}
+
+		document.getElementById("saveSL").textContent = this.saveStatus;
 
 		alert("Listing saved.");
 	}
