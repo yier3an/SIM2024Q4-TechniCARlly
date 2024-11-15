@@ -1,64 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="../../static/styles.css" type="text/css"/>
-	<link rel="stylesheet" href="../../static/adminStyle.css" type="text/css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>TechniCARlly</title>
+    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/adminStyle.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="../../../firebaseConfig.js"></script>
+    <script type="module" src="../../boundaries/admin/viewProfileUI.js"></script>
 </head>
 
 <body>
-	<div class="navbar">
-		<span id="group_name">TechniCARlly</span>
-		<a href="adminHome.html">Home</a>
-		<a href="viewAccList.html">Accounts</a>
-		<a href="viewProfileList.html" class="active">Profiles</a>
+    <div class="navbar">
+        <span id="group_name">TechniCARlly</span>
+        <a href="adminHome.html">Home</a>
+        <a href="viewAccList.html">Accounts</a>
+        <a href="viewProfileList.html" class="active">Profiles</a>
+        <div class="nav_item_right">
+            <a href="../logout.html" class="nav_logout">Logout</a>
+        </div>
+    </div>
 
-		<div class="nav_item_right">
-			<a href="../logout.html" class="nav_logout">Logout</a>
-		</div>
-	</div>
+    <div>
+        <div class="header_row">
+            <h2>List of User Profiles</h2>
+            <button class="create_new_btn" onclick="window.location.href='createProfile.html'">Create New Profile</button>
+        </div>
 
-	<div>
-		<div class="header_row">
-			<h2>List of User Profiles</h2>
-			<button class="create_new_btn" onclick="window.location.href='createProfile.html'">Create New
-				Profile</button>
-		</div>
+        <div id="profileList">
+            <table id="userProfileTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Profiles will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </div>
 
-		<div class="search">
-			<form name="search" onsubmit="" method="post">
-				<input type="text" placeholder="Search by name" name="search_input">
-				<button type="submit">Search</button>
-			</form>
-		</div>
+        <!-- Inline script to dynamically load user profiles -->
+        <script type="module">
+            import { loadProfiles } from '../../boundaries/admin/viewProfileUI.js';
 
-		<br><br>
-
-		<div id="profileList">
-			<table>
-				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Description</th>
-					<th>Edit</th>
-				</tr>
-
-				<tr>
-					<!-- ** retrieve from database -->
-					<!-- <td>01</td>
-					<td>Admin</td>
-					<td>Allow to modify the account and profiles</td>
-					<td><a href="editProfile.html"><i class="fa-solid fa-pen-to-square"></i></a></td> -->
-				</tr>
-
-			</table>
-		</div>
-
-	</div>
-
-	<script src="../../boundaries/loginUI.js"></script>
+            // Load user profiles dynamically when the page loads
+            loadProfiles();
+        </script>
+    </div>
 </body>
 
 </html>

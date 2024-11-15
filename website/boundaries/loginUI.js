@@ -1,50 +1,22 @@
-// boundaries/loginUI.js
-import loginController from "../controllers/loginController.js";
+import { UserAccount } from "./userAccount.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("login_btn").addEventListener("click", () => {
-		const email = document.getElementById("username").value;
-		const password = document.getElementById("password").value;
-		loginController(email, password);
-	});
+// Get form values
+const loginForm = document.getElementById('login-form');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Create a new UserAccount instance
+    const userAccount = new UserAccount(null, emailInput.value, passwordInput.value, null);
+
+    // Attempt login
+    const user = await userAccount.login();
+    
+    if (user) {
+        // If login is successful, the redirection will be handled inside the login method
+    } else {
+        alert("Login failed. Please check your credentials.");
+    }
 });
-
-// note to Seth: have to use class too!! see if you can combine,
-// if not I can try for these too (Chloe)
-/*
-class loginUI {
-	constructor() {
-		username = document.forms["login"]["username"].value;
-		pwd = document.forms["login"]["password"].value;
-		loginC = new loginController(username, pwd);
-	}
-
-	displayLoginPg() {
-	//
-	}
-
-	attemptLogin() {
-		// validate the login
-		let loginStatus = loginC.validateLogin(loginC.user);
-
-		if (loginStatus) {
-			this.loginSuccess();
-		}
-		else {
-			this.loginError();
-		}
-	}
-
-	loginSuccess() {
-		// redirect to user home page
-		// window.location.replace("/home.html");
-		console.log("login success");
-	}
-
-	loginError() {
-		// show error, ask to try again
-		// alert("Entered invalid username or password. Please try again.");
-		console.log("login error");
-	}
-}
-*/

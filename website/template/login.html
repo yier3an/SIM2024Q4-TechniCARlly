@@ -59,11 +59,17 @@
                     // Redirect based on user role
                     if (role === "admin") {
                         window.location.href = "adminPages/adminHome.html";  // Redirect to admin page
+                    } else if (role === "agent") {
+                        window.location.href = "agentPages/agentHome.html";  // Redirect to agent page
+                    } else if (role === "seller") {
+                        window.location.href = "sellerPages/sellerHome.html";  // Redirect to seller page
                     } else {
-                        window.location.href = "userHome.html";  // Redirect to user page (example)
+                        console.log("Unrecognized role");
+                        document.getElementById("err_mess").innerText = "Unrecognized role: " + role;
                     }
                 } else {
                     console.log("No such user document!");
+                    document.getElementById("err_mess").innerText = "No such user found.";
                 }
             } catch (error) {
                 console.error("Login failed: ", error.message);

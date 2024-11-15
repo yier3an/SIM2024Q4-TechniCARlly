@@ -1,6 +1,7 @@
 // CreateAccUI.js
 import { CreateAccController } from "../../controllers/admin/CreateAccController.js";
 
+
 document.addEventListener("DOMContentLoaded", () => {
     // Attach event listener to the "Create Account" button
     const createAccountButton = document.getElementById("createAccountButton");

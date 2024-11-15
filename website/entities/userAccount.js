@@ -4,7 +4,6 @@ import {
     setDoc, 
     getDoc, 
     updateDoc, 
-    deleteDoc, 
     collection, 
     query, 
     where, 
@@ -18,14 +17,13 @@ import {
     sendEmailVerification 
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
-
-
+// Firebase instance
 const db = getFirestore();
 const auth = getAuth();
 
 export class UserAccount {
     constructor(name, email, password, role) {
-        this.name = name;  // Added name to the constructor
+        this.name = name;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -63,7 +61,7 @@ export class UserAccount {
     }
 
     // Login Method: Checks user role and redirects to the appropriate page
-    async login() {
+	async login() {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, this.email, this.password);
             const userId = userCredential.user.uid;
@@ -71,15 +69,18 @@ export class UserAccount {
             // Fetch user role from Firestore
             const userRole = await UserAccount.getUserRole(userId);
 
+            // Redirect based on user role
             if (userRole === "admin") {
-                // Redirect to the admin home page if the user is an admin
-                window.location.href = "/template/adminpages/adminHome.html";
+                window.location.href = "../template/adminPages/adminHome.html";  // Admin page
+            } else if (userRole === "agent") {
+                window.location.href = "../template/agentPages/agentHome.html";  // Agent page
+            } else if (userRole === "seller") {
+                window.location.href = "../template/sellerPages/sellerHome.html";  // Seller page
             } else {
-                // Optionally handle non-admin users
-                alert("You do not have admin privileges.");
+                alert("You do not have the necessary role to access the platform.");
             }
 
-            return userCredential.user;
+            return userCredential.user; // Return user object
         } catch (error) {
             console.error("Login error:", error);
             alert("Login failed. Please check your credentials.");
@@ -87,7 +88,7 @@ export class UserAccount {
         }
     }
 
-    // Get user role from Firestore
+    // Fetch user role from Firestore
     static async getUserRole(userId) {
         try {
             const userDoc = await getDoc(doc(db, "UserAccount", userId));
@@ -145,18 +146,6 @@ export class UserAccount {
             throw error;
         }
     }
-
-	static async updateAccount(userId, updatedData) {
-		try {
-			const userRef = doc(db, "users", userId); // Adjust collection name if different
-			await updateDoc(userRef, updatedData);
-			console.log(`Account with ID ${userId} updated successfully`);
-			return true;
-		} catch (error) {
-			console.error("Error updating account:", error);
-			throw error;
-		}
-	}
 
     // Search accounts by email
     static async searchAccountsByEmail(email) {
