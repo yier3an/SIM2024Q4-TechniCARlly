@@ -1,15 +1,21 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+import {
+	getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc,
+	collection, query, where, getDocs, onSnapshot
+}
+	from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCBU1KmmrmCVv9DKonZAP7Y8V6sicxWdC4",
-  authDomain: "cscit314.firebaseapp.com",
-  projectId: "cscit314",
-  storageBucket: "cscit314.firebasestorage.app",
-  messagingSenderId: "744411197952",
-  appId: "1:744411197952:web:3495385cfc36e1fcdc5ee5",
-  measurementId: "G-7J03QMTQK0"
+
+	apiKey: "AIzaSyBJskM4hFlHN-b7w8pvWDKNuwL1VhAk4Jc",
+	authDomain: "technicarl.firebaseapp.com",
+	projectId: "technicarl",
+	storageBucket: "technicarl.firebasestorage.app",
+	messagingSenderId: "671091113396",
+	appId: "1:671091113396:web:cc46dcd2c9657bc90ec6e1",
+	measurementId: "G-GT5D6RBQLR"
+
 };
 
 // Initialize Firebase app once
@@ -19,4 +25,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { auth, db };
+export {
+	getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc,
+	collection, query, where, getDocs, onSnapshot
+};

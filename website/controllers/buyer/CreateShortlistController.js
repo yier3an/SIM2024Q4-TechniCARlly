@@ -5,7 +5,9 @@ export class CreateShortlistController {
 		this.sl = new Shortlist();
 	}
 
-	async saveListing(carListingID, listingName, carModel, price, seller, buyer) {
-		return this.sl.saveListing(carListingID, listingName, carModel, price, seller, buyer);
+	saveListing(carListingID, listingName, carModel,
+		price, seller, buyer, agent) {
+		return this.sl.saveListing(carListingID, listingName, carModel,
+			price, seller, buyer, agent);
 	}
 }
