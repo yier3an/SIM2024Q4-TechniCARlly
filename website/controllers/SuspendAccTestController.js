@@ -1,9 +1,11 @@
-class SuspendAccTestController {
+import { UserAccount } from "../entities/userAccount";
+
+export class SuspendAccTestController {
 	constructor() {
-		//
+		this.useraccount = new UserAccount();
 	}
 
-	testing() {
+	confirmSuspend(username) {
 		console.log("in controller");
 	}
 }

@@ -24,5 +24,6 @@ class CalculatorUI {
 		loanAmt = this.getLoanAmt(carPrice, dPaymt, intRate, loanTerm)
 
 		// display onto html
+		document.getElementById("currDate").value = today;
 	}
 }
