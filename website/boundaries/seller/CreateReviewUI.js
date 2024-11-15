@@ -1,4 +1,5 @@
 import { CreateReviewController } from "../../controllers/buyer/CreateReviewController.js";
+import { CreateReviewController } from "../../controllers/buyer/CreateReviewController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("submit_review_btn").addEventListener("click", () => {
@@ -28,4 +29,6 @@ class createReviewUI {
 
 		window.location.href = "sellerViewCar.html"
 	} 0
+		window.location.href = "sellerViewCar.html"
+} 0
 }
