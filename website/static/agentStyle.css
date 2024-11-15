@@ -161,6 +161,7 @@
 }
 
 #create_car_form .field_input, 
+#create_car_form .text, 
 #edit_car_form .field_input {
     width: 65%;
 }
