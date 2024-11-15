@@ -1,52 +1,39 @@
-// entities/CarListing.js
+import { db } from '../../firebaseConfig.js'; // Ensure firebaseConfig is properly set up
 
+// CarListing Entity
 export class CarListing {
-	constructor(id, title, description, price, agentId) {
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.price = price;
-		this.agentId = agentId;
+	static async addCarListing(carID, carName, coeExpiry) {
+		try {
+			const docRef = await db.collection('CarListing').doc(carID).set({
+				CarID: carID,
+				CarName: carName,
+				'COE Expiry': coeExpiry
+			});
+			return true;
+		} catch (error) {
+			console.error('Error adding car listing:', error);
+			return false;
+		}
 	}
 
-	static async createListing(listingData) {
-		// Create a new listing in Firebase Firestore
-		const db = firebase.firestore();
-		const newListingRef = db.collection("carListings").doc();
-		await newListingRef.set(listingData);
-		return newListingRef.id;
+	async getCarListing() {
+		try {
+			const snapshot = await db.collection('CarListing').get();
+			const carListings = snapshot.docs.map(doc => doc.data());
+			return carListings;
+		} catch (error) {
+			console.error('Error fetching car listings:', error);
+			return [];
+		}
 	}
 
-	static async getCarListing() {
-		// Retrieve a listing by ID
-		const db = firebase.firestore();
-		const listingDoc = await db.collection("CarListing").doc().get();
-		return listingDoc.exists ? listingDoc.data() : null;
-	}
-
-	static async updateListing(id, updatedData) {
-		// Update listing data
-		const db = firebase.firestore();
-		await db.collection("carListings").doc(id).update(updatedData);
-		return true;
-	}
-
-	static async deleteListing(id) {
-		// Delete a listing
-		const db = firebase.firestore();
-		await db.collection("carListings").doc(id).delete();
-		return true;
-	}
-
-	static async searchListings(query) {
-		// Search for listings based on a query
-		const db = firebase.firestore();
-		const snapshot = await db.collection("carListings")
-			.where("title", "==", query)
-			.get();
-
-		const results = [];
-		snapshot.forEach(doc => results.push({ id: doc.id, ...doc.data() }));
-		return results;
+	static async deleteCarListing(carID) {
+		try {
+			await db.collection('CarListing').doc(carID).delete();
+			return true;
+		} catch (error) {
+			console.error('Error deleting car listing:', error);
+			return false;
+		}
 	}
 }

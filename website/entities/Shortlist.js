@@ -13,4 +13,9 @@ export class Shortlist {
 		let listingDoc = await db.collection("ShortList").doc(shortListID).get();
 		return listingDoc.exists ? listingDoc.data() : null;
 	}
+
+	async getSLcar(ShortlistID) {
+		let listingDoc = await db.collection("ShortList").doc(shortListID).get();
+		return listingDoc.exists ? listingDoc.data() : null;
+	}
 }

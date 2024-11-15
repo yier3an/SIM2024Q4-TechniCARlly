@@ -28,6 +28,7 @@ class CalculatorUI {
 
 	displayLoanAmt() {
 		// display onto html
-		document.getElementById("loanAmt").textContent = this.loanAmt.toFixed(2);
+		document.getElementById("loanAmt").textContent = "Car Loan Payment (per month): " +
+			this.loanAmt.toFixed(2);
 	}
 }

@@ -6,6 +6,7 @@ export class ViewCarListingController {
 	}
 
 	getCarListing() {
-		return this.cl.getCarListing();
+		let abs = this.cl.getCarListing();
+		return abs;
 	}
 }

@@ -1,6 +1,5 @@
 import { ViewCarListingController } from "../../controllers/buyer/ViewCarListingController.js";
 
-// usedCarListing.js
 document.addEventListener("DOMContentLoaded", () => {
 	let carListing = new ViewCarListingUI();
 	// var x = document.getElementById("searchError");
@@ -33,9 +32,5 @@ class ViewCarListingUI {
 
 			listingsContainer.appendChild(childEle);
 		});
-	}
-
-	displayPg() {
-
 	}
 }
