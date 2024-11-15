@@ -1,5 +1,5 @@
 // viewListingController.js
-import Car from '../entities/CarListing';
+import Car from '../entities/carListing';
 
 class viewListingController {
     static viewCarListing(carListingID) {

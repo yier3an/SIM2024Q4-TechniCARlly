@@ -63,10 +63,9 @@
                         window.location.href = "agentPages/agentHome.html";  // Redirect to agent page
                     } else if (role === "seller") {
                         window.location.href = "sellerPages/sellerHome.html";  // Redirect to seller page
-                    } else {
-                        console.log("Unrecognized role");
-                        document.getElementById("err_mess").innerText = "Unrecognized role: " + role;
-                    }
+                    }else if (role === "buyer") {
+                        window.location.href = "buyerPages/buyerHome.html";  // Redirect to seller page
+                    }  
                 } else {
                     console.log("No such user document!");
                     document.getElementById("err_mess").innerText = "No such user found.";
