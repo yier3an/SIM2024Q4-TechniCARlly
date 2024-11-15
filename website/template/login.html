@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>TechniCARlly</title>
 	<link rel="stylesheet" href="../static/styles.css" type="text/css" />
 
-
-	<!-- Firebase SDK Scripts -->
-	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js" type="module"></script>
-	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js" type="module"></script>
-	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js" type="module"></script>
-
-	<!-- Import Firebase Configuration and User Account Module -->
+	<!-- Import Firebase Configuration -->
 	<script type="module" src="../../firebaseConfig.js"></script>
-	<script type="module" src="../entities/useraccount.js"></script>
+	<script type="module" src="../entities/userAccount.js"></script>
 </head>
 
 <body>
@@ -23,38 +16,23 @@
 
 	<div id="login_form">
 		<h2>Login</h2>
-
-		<form name="login" onsubmit="" method="post">
+		<form name="login" onsubmit="return false;" method="post">
 			<table>
 				<tr>
-					<td>
-						<label for="username">Username: </label>
-					</td>
-					<td class="field_input">
-						<input type="text" id="username" name="username" required />
-					</td>
+					<td><label for="username">Username: </label></td>
+					<td class="field_input"><input type="text" id="username" name="username" required /></td>
 				</tr>
-
 				<tr>
-					<td>
-						<label for="password">Password: </label>
-					</td>
-					<td class="field_input">
-						<input type="text" id="password" name="password" required />
-					</td>
+					<td><label for="password">Password: </label></td>
+					<td class="field_input"><input type="password" id="password" name="password" required /></td>
 				</tr>
 			</table>
-
-
 		</form>
+
 		<div id="login_info">
-			<span id="err_mess">
-				<!-- Username / Password is invalid. Please try again. -->
-			</span>
+			<span id="err_mess"></span>
 			<button type="submit" id="login_btn">Login</button>
 		</div>
-
-
 	</div>
 
 	<!-- Button to Create an Admin User for Testing -->
@@ -64,16 +42,18 @@
 	</div>
 
 	<script type="module">
-		import { createUser } from "../entities/useraccount.js";
+		// Import the auth and db instances from firebaseConfig
+		import { auth, db } from "../../firebaseConfig.js";
+		import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+		import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-		// Login function (to be implemented in loginController.js)
+		// Login function
 		function login() {
 			const email = document.getElementById("username").value;
 			const password = document.getElementById("password").value;
 
-			firebase.auth().signInWithEmailAndPassword(email, password)
+			signInWithEmailAndPassword(auth, email, password)
 				.then((userCredential) => {
-					// Login success, redirect or perform any action
 					window.location.href = "adminPages/adminHome.html"; // Redirect to admin homepage
 				})
 				.catch((error) => {
@@ -81,21 +61,38 @@
 				});
 		}
 
-		// Create Admin User Functionality
-		document.getElementById("createAdminBtn").addEventListener("click", () => {
-			const email = "admin@example.com";      // Change as needed
-			const password = "password123";         // Change as needed
-			const role = "admin";                   // Define user role as "admin"
+		// Event listener for login button
+		document.getElementById("login_btn").addEventListener("click", login);
 
-			createUser(email, password, role)
-				.then(() => alert("Admin user created successfully"))
-				.catch((error) => alert("Error creating admin user: " + error.message));
-		});
+		// Create Admin User Functionality
+		async function createAdminUser() {
+			const email = "tester222@example.com"; // Admin email for testing
+			const password = "123456";           // Admin password for testing
+			const role = "admin";
+
+			try {
+				// Create user with email and password
+				const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+				const userId = userCredential.user.uid;
+
+				// Add user data to Firestore with the role 'admin'
+				await setDoc(doc(db, "UserAccount", userId), {
+					email: email,
+					role: role,
+				});
+				
+				alert("Admin user 'tester' created successfully");
+			} catch (error) {
+				alert("Error creating admin user: " + error.message);
+			}
+		}
+
+		// Event listener for create admin button
+		document.getElementById("createAdminBtn").addEventListener("click", createAdminUser);
 	</script>
 
 	<!-- Custom JavaScript file for handling login UI -->
 	<script type="module" src="../boundaries/loginUI.js"></script>
 
 </body>
-
 </html>
