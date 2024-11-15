@@ -1,10 +1,13 @@
-// SuspendAccController.js
-import UserAccount from '../entities/userAccount';
+import { UserAccount } from '../../entities/userAccount.js';
 
-class SuspendAccController {
-    static suspendAccount(userId) {
-        // Logic to suspend user account based on userId
+export class SuspendAccountController {
+    static async suspendUserAccount(userId) {
+        try {
+            // Call the entity method to suspend the account
+            await UserAccount.suspendAccount(userId);
+        } catch (error) {
+            console.error('Error in SuspendAccountController:', error);
+            throw error;
+        }
     }
 }
-
-export default SuspendAccController;

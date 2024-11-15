@@ -1,67 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="../../static/styles.css" type="text/css"/>
-	<link rel="stylesheet" href="../../static/adminStyle.css" type="text/css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>TechniCARlly</title>
+    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/adminStyle.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="../../../firebaseConfig.js"></script>
+    <script type="module" src="../../boundaries/admin/ViewAccUI.js"></script>
+    <script type="module" src="../../boundaries/admin/SuspendAccUI.js"></script>
+	<script type="module" src="../../controllers/admin/UpdateAccController.js"></script>
+
 </head>
 
 <body>
-	<div class="navbar">
-		<span id="group_name">TechniCARlly</span>
-		<a href="adminHome.html">Home</a>
-		<a href="viewAccList.html" class="active">Accounts</a>
-		<a href="viewProfileList.html">Profiles</a>
+    <div class="navbar">
+        <span id="group_name">TechniCARlly</span>
+        <a href="adminHome.html">Home</a>
+        <a href="viewAccList.html" class="active">Accounts</a>
+        <a href="viewProfileList.html">Profiles</a>
+        <div class="nav_item_right">
+            <a href="../logout.html" class="nav_logout">Logout</a>
+        </div>
+    </div>
 
-		<div class="nav_item_right">
-			<a href="../logout.html" class="nav_logout">Logout</a>
-		</div>
-	</div>
+    <div>
+        <div class="header_row">
+            <h2>List of User Accounts</h2>
+            <button class="create_new_btn" onclick="window.location.href='createAcc.html'">Create New Account</button>
+			<button onclick="window.location.href='editAcc.html?userId=USER_ID'">Edit</button>
 
-	<div>
-		<div class="header_row">
-			<h2>List of User Accounts</h2>
-			<button class="create_new_btn" onclick="window.location.href='createAcc.html'">Create New Account</button>
-		</div>
+        </div>
 
-		<div class="search">
-			<form name="search" onsubmit="" method="post">
-				<input type="text" placeholder="Search by name or email" name="search_input">
-				<button type="submit">Search</button>
-			</form>
-		</div>
+        <div id="accList">
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>User Type</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Suspend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
 
-		<br><br>
+        <!-- Inline script to dynamically load user accounts -->
+        <script type="module">
+            import { loadAccounts } from '../../boundaries/admin/ViewAccUI.js';
+            import { suspendAccount } from '../../boundaries/admin/SuspendAccUI.js';
 
-		<div id="accList">
-			<table>
-				<tr>
-					<th>ID</th>
-					<th>User Type</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Status</th>
-					<th>Edit</th>
-				</tr>
+            // Attach suspendAccount function globally for use in button onclicks
+            window.suspendAccount = suspendAccount;
 
-				<tr>
-					<!-- ** retrieve from database -->
-					<!-- <td>01</td>
-					<td>Admin</td>
-					<td>SH</td>
-					<td>sh123@gmail.com</td>
-					<td>available</td>
-					<td><a href="editAcc.html"><i class="fa-solid fa-pen-to-square"></i></a></td> -->
-				</tr>
-
-			</table>
-		</div>
-
-	</div>
-
-	<script src="../boundaries/loginUI.js"></script>
+            // Load user accounts dynamically
+            loadAccounts();
+        </script>
+    </div>
 </body>
 
 </html>

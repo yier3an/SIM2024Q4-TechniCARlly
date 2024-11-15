@@ -1,10 +1,11 @@
-// ViewAccController.js
-import UserAccount from '../entities/userAccount';
+import { UserAccount } from '../../entities/userAccount.js';
 
-class ViewAccController {
-    static viewAccount(userId) {
-        // Logic to retrieve user account details based on userId
+export async function getAccounts() {
+    try {
+        // Call the entity method to fetch all user accounts
+        return await UserAccount.getAllAccounts();
+    } catch (error) {
+        console.error('Error in ViewAccController:', error);
+        throw error;
     }
 }
-
-export default ViewAccController;

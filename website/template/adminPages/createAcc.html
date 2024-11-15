@@ -1,86 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="../../static/styles.css" type="text/css"/>
-	<link rel="stylesheet" href="../../static/adminStyle.css" type="text/css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechniCARlly - Create Account</title>
+    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/adminStyle.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="../../../firebaseConfig.js"></script>
+    <script type="module" src="../../boundaries/admin/CreateAccUI.js"></script>
 </head>
 
 <body>
-	<div class="navbar">
-		<span id="group_name">TechniCARlly</span>
-		<a href="adminHome.html">Home</a>
-		<a href="viewAccList.html">Accounts</a>
-		<a href="viewProfileList.html">Profiles</a>
+    <div class="navbar">
+        <span id="group_name">TechniCARlly</span>
+        <a href="adminHome.html">Home</a>
+        <a href="viewAccList.html">Accounts</a>
+        <a href="viewProfileList.html">Profiles</a>
+        <div class="nav_item_right">
+            <a href="../logout.html" class="nav_logout">Logout</a>
+        </div>
+    </div>
 
-		<div class="nav_item_right">
-			<a href="../logout.html" class="nav_logout">Logout</a>
-		</div>
-	</div>
+    <div id="create_acc_form">
+        <div class="title_row">
+            <h2>Create New Account</h2>
+            <a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
+        </div>
 
-	<div id="create_acc_form">
-		<div class="title_row">
-			<h2>Create New Account</h2>
-			<a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
-		</div>
+        <form id="createAccountForm">
+            <table>
+                <tr>
+                    <td>
+                        <label for="role">User Type: </label>
+                    </td>
+                    <td class="field_input">
+                        <select id="role" name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="buyer">Buyer</option>
+                            <option value="seller">Seller</option>
+                            <option value="agent">Agent</option>
+                        </select>
+                    </td>
+                </tr>
 
-		<form name="create_acc" onsubmit="" method="post">
-			<table>
-				<tr>
-					<td>
-						<label for="usertype">User Type: </label>
-					</td>
-					<td class="field_input">
-						<select id="usertype" name="usertype">
-							<option value="admin">User Admin</option>
-							<option value="buyer">Buyer</option>
-							<option value="seller">Seller</option>
-							<option value="agent">Used Car Agent</option>
-							<!-- ** option retrieve from database (profile) -->
-						</select>
-					</td>
-				</tr>
+                <tr>
+                    <td>
+                        <label for="name">Name: </label>
+                    </td>
+                    <td class="field_input">
+                        <input type="text" id="name" placeholder="Enter full name" required />
+                    </td>
+                </tr>
 
-				<tr>
-					<td>
-						<label for="name">Name: </label>
-					</td>
-					<td class="field_input">
-						<input type="text" id="name" name="name" required />
-					</td>
-				</tr>
+                <tr>
+                    <td>
+                        <label for="email">Email: </label>
+                    </td>
+                    <td class="field_input">
+                        <input type="email" id="email" placeholder="Enter email address" required />
+                    </td>
+                </tr>
 
-				<tr>
-					<td>
-						<label for="email">Email: </label>
-					</td>
-					<td class="field_input">
-						<input type="email" id="email" name="email" required />
-					</td>
-				</tr>
+                <tr>
+                    <td>
+                        <label for="password">Password: </label>
+                    </td>
+                    <td class="field_input">
+                        <input type="password" id="password" placeholder="Enter password" required />
+                    </td>
+                </tr>
+            </table>
+        </form>
 
-				<tr>
-					<td>
-						<label for="password">Password: </label>
-					</td>
-					<td class="field_input">
-						<input type="text" id="password" name="password" required />
-					</td>
-				</tr>
-
-			</table>
-		</form>
-
-		<div id="create_acc_action">
-			<button id="cancel_create_acc_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
-			<button type="submit" id="submit_create_acc_btn"
-				onclick="window.location.href='viewAccList.html'">Submit</button>
-		</div>
-	</div>
-
-	<script src="../../boundaries/loginUI.js"></script>
+        <div id="create_acc_action">
+            <button id="cancel_create_acc_btn" onclick="window.location.href='viewAccList.html'">Cancel</button>
+            <button type="button" id="createAccountButton">Submit</button>
+        </div>
+    </div>
 </body>
 
 </html>
