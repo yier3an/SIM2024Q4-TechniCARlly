@@ -1,11 +1,11 @@
 import { CarListing } from "../../entities/CarListing.js";
 
-export class ViewCarListingController {
+export class ViewNoController {
 	constructor() {
 		this.cl = new CarListing();
 	}
 
-	getCarListing() {
-		return this.cl.getCarListing();
+	getViews() {
+		return this.cl.getViews();
 	}
 }

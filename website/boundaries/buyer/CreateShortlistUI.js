@@ -14,16 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
 class CreateShortlistUI {
 	constructor() {
 		this.slController = new CreateShortlistController();
+		this.saveStatus = "";
 	}
 
 	saveListing(carListingID, save) {
 		this.slController.saveListing(carListingID);
+		this.saveStatus = save;
 		this.saveSuccess();
 	}
 
 	saveSuccess() {
-		if (save.value == "save") {
-			save.value = "saved";
+		if (this.saveStatus.value == "save") {
+			this.saveStatus.value = "saved";
+		}
+		else {
+			this.saveStatus.value = "saved";
 		}
 
 		alert("Listing saved.");

@@ -1,39 +1,74 @@
-import { db } from '../../firebaseConfig.js'; // Ensure firebaseConfig is properly set up
+// entities/CarListing.js
 
-// CarListing Entity
+import firebase from "firebase/app";
+import "firebase/firestore";
+
 export class CarListing {
-	static async addCarListing(carID, carName, coeExpiry) {
-		try {
-			const docRef = await db.collection('CarListing').doc(carID).set({
-				CarID: carID,
-				CarName: carName,
-				'COE Expiry': coeExpiry
-			});
-			return true;
-		} catch (error) {
-			console.error('Error adding car listing:', error);
-			return false;
-		}
+	constructor(id, title, description, price, agentId) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.price = price;
+		this.agentId = agentId;
 	}
 
-	async getCarListing() {
-		try {
-			const snapshot = await db.collection('CarListing').get();
-			const carListings = snapshot.docs.map(doc => doc.data());
-			return carListings;
-		} catch (error) {
-			console.error('Error fetching car listings:', error);
-			return [];
-		}
+	static async createListing(listingData) {
+		const db = firebase.firestore();
+		const newListingRef = db.collection("carListings").doc();
+		await newListingRef.set(listingData);
+		return newListingRef.id;
 	}
 
-	static async deleteCarListing(carID) {
-		try {
-			await db.collection('CarListing').doc(carID).delete();
-			return true;
-		} catch (error) {
-			console.error('Error deleting car listing:', error);
-			return false;
+	static async getListingById(id) {
+		const db = firebase.firestore();
+		const listingDoc = await db.collection("carListings").doc(id).get();
+		return listingDoc.exists ? listingDoc.data() : null;
+	}
+
+	static async updateListing(id, updatedData) {
+		const db = firebase.firestore();
+		await db.collection("carListings").doc(id).update(updatedData);
+		return true;
+	}
+
+	static async deleteListing(id) {
+		const db = firebase.firestore();
+		await db.collection("carListings").doc(id).delete();
+		return true;
+	}
+
+	static async searchListings(query, maxPrice = null) {
+		const db = firebase.firestore();
+		let queryRef = db.collection("carListings").where("title", "==", query);
+		if (maxPrice !== null) {
+			queryRef = queryRef.where("price", "<=", maxPrice);
 		}
+		const snapshot = await queryRef.get();
+
+		const results = [];
+		snapshot.forEach(doc => results.push({ id: doc.id, ...doc.data() }));
+		return results;
+	}
+
+	static async getAllListingsByAgent(agentId) {
+		const db = firebase.firestore();
+		const snapshot = await db.collection("carListings")
+			.where("agentId", "==", agentId)
+			.get();
+
+		const listings = [];
+		snapshot.forEach(doc => listings.push({ id: doc.id, ...doc.data() }));
+		return listings;
+	}
+
+	static async getRatingsAndReviews(listingId) {
+		const db = firebase.firestore();
+		const snapshot = await db.collection("ratingsAndReviews")
+			.where("listingId", "==", listingId)
+			.get();
+
+		const reviews = [];
+		snapshot.forEach(doc => reviews.push({ id: doc.id, ...doc.data() }));
+		return reviews;
 	}
 }
