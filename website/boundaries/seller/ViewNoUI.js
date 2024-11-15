@@ -1,12 +1,11 @@
 import { ViewNoController } from "../../controllers/seller/ViewNoController.js";
-import { CarListing } from "../../entities/CarListing.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let views = new ViewNoController();
+	let views = new ViewNoUI();
 	views.displayViews();
 });
 
-class ViewCarListingUI {
+class ViewNoUI {
 	constructor() {
 		this.viewController = new ViewNoController();
 	}
