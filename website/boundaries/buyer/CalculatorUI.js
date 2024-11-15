@@ -1,8 +1,15 @@
+import { CalculatorController } from "../../controllers/buyer/CalculatorController.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("calculate").addEventListener(
+	document.getElementById("calculate_btn").addEventListener(
 		"click", () => {
+			let carPrice = document.forms["calculator"]["carPrice"].value;
+			let dPaymt = document.forms["calculator"]["downPayment"].value;
+			let intRate = document.forms["calculator"]["intRate"].value;
+			let loanTerm = document.forms["calculator"]["loanTerm"].value;
+
 			const calculator = new CalculatorUI();
-			calculator.displayLoanAmt();
+			calculator.getLoanAmt(carPrice, dPaymt, intRate, loanTerm);
 		}
 	);
 });
@@ -10,20 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
 class CalculatorUI {
 	constructor() {
 		this.calcController = new CalculatorController();
-		carPrice = document.forms["calculator"]["carPrice"].value;
-		dPaymt = document.forms["calculator"]["dPaymt"].value;
-		intRate = document.forms["calculator"]["intRate"].value;
-		loanTerm = document.forms["calculator"]["loanTerm"].value;
+		this.loanAmt = 0;
 	}
 
 	getLoanAmt(carPrice, dPaymt, intRate, loanTerm) {
-		return this.calcController.calc(carPrice, dPaymt, intRate, loanTerm);
+		this.loanAmt = this.calcController.calc(carPrice, dPaymt, intRate, loanTerm);
+
+		this.displayLoanAmt();
 	}
 
 	displayLoanAmt() {
-		loanAmt = this.getLoanAmt(carPrice, dPaymt, intRate, loanTerm)
-
 		// display onto html
-		document.getElementById("currDate").value = today;
+		document.getElementById("loanAmt").textContent = "Car Loan Payment (per month): " +
+			this.loanAmt.toFixed(2);
 	}
 }
