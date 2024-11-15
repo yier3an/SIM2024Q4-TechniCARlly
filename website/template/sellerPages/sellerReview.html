@@ -24,14 +24,14 @@
 			<a href="sellerViewCar.html"><i class="fa-solid fa-xmark"></i></a>
 		</div>
 
-		<form name="review_agent" method="post">
+		<form name="review_agent" onsubmit="" method="post">
 			<table>
 				<tr>
 					<td>
-						<label for="agent">Agent Name: </label>
+						<label for="agentName">Agent Name: </label>
 					</td>
 					<td class="text">
-						<span>Agent1 </span>
+						<span name="agentName" id="agentName">Agent1</span>
 					</td>
 				</tr>
 
@@ -40,7 +40,7 @@
 						<label for="rating">Ratings: </label>
 					</td>
 					<td>
-						<fieldset class="rating">
+						<fieldset class="rating" id="rating">
 							<input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"
 								title="Awesome - 5 stars"></label>
 							<input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4"
@@ -52,14 +52,6 @@
 							<input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"
 								title="Sucks big time - 1 star"></label>
 						</fieldset>
-						<!-- <div class="rating">
-                            <input type="number" name="rating" hidden>
-                            <i class='fa fa-star' style="--i: 0;"></i>
-                            <i class='bx bx-star star' style="--i: 1;"></i>
-                            <i class='bx bx-star star' style="--i: 2;"></i>
-                            <i class='bx bx-star star' style="--i: 3;"></i>
-                            <i class='bx bx-star star' style="--i: 4;"></i>
-                        </div> -->
 					</td>
 				</tr>
 
@@ -68,8 +60,7 @@
 						<label for="review">Review: </label>
 					</td>
 					<td class="field_input">
-						<textarea name="review" rows="4" cols="22" required></textarea>
-						<!-- <input type="text" id="review" name="review" required /> -->
+						<textarea name="review" id="review" rows="4" cols="22" required></textarea>
 					</td>
 				</tr>
 
@@ -86,6 +77,7 @@
 	<script type="module" src="../../entities/Review.js"></script>
 	<script type="module" src="../../controllers/seller/CreateReviewController.js"></script>
 	<script type="module" src="../../boundaries/seller/CreateReviewUI.js"></script>
+</body>
 </body>
 
 </html>

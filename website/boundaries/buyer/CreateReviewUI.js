@@ -27,5 +27,5 @@ class createReviewUI {
 		alert("Review Submitted.");
 
 		window.location.href = "buyerViewCar.html"
-	}
+	} 0
 }
