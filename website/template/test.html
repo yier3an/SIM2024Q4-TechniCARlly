@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TechniCARlly</title>
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<span id="group_name">TechniCARlly</span>
+		<a href="adminHome.html">Home</a>
+		<a href="viewAccList.html">Accounts</a>
+		<a href="viewProfileList.html">Profiles</a>
+
+		<div class="nav_item_right">
+			<a href="../logout.html" class="nav_logout">Logout</a>
+		</div>
+	</div>
+
+	<div id="calculatorForm">
+		<form name="calculator" onsubmit="" method="post">
+			<table>
+				<tr>
+					<td>
+						<label for="price">Car Price: </label>
+					</td>
+					<td class="loanCalculator">
+						<input type="number" id="price" name="price" required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for=""> </label>
+					</td>
+					<td class="loanCalculator">
+
+					</td>
+				</tr>
+
+			</table>
+		</form>
+
+		<div id="edit_profile_action">
+			<button type="submit" id="calculateButton" onclick="">Calculate</button>
+		</div>
+	</div>
+
+	<script src="../boundaries/buyer/CalculatorUI.js"></script>
+</body>
+
+</html>

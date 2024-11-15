@@ -1,74 +1,44 @@
-// entities/useraccount.js
+// entities/userAccount.js
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
-import { auth, db } from "../../firebaseConfig.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-import { setDoc, doc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+const db = getFirestore();
+const auth = getAuth();
 
-
-
-export async function createUser(email, password, userType) {
-	try {
-		// Create user with email and password
-		const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-		const user = userCredential.user;
-		// Store user data in Firestore with role
-		await setDoc(doc(db, "users", user.uid), {
-			email: email,
-			role: userType
-		});
-
-		console.log("User created successfully:", user);
-	} catch (error) {
-		console.error("Error creating user:", error);
-	}
-}
-// Usage example for creating a new admin:
-// createUser('admin@example.com', 'password123', 'admin');
-
-/*
-class userAccount {
-	constructor(name, userType, username, pwd) {
-		// this.name = name;
-		// this.userType = userType;
-		this.username = username; // email will be used as username
-		this.pwd = pwd;
+export class UserAccount {
+	constructor(email, password, role) {
+		this.email = email;
+		this.password = password;
+		this.role = role;
 	}
 
-	// accessors
-	get account() {
-		return this;
-	}
-
-	// mutator
-	set setInfo(ua) {
-		this.name = ua.name;
-		this.username = ua.username;
-		this.pwd = ua.pwd;
-	}
-
-	// get info from database
-	validateLogin(username, pwd) {
-
-		if (this.accExists(username)) {
-			if (this.pwd == pwd) {
-				return true
-			}
-		}
-		// if (this.email == username && this.pwd == pwd) {
-		// 	return true;
-		// }
-		return false;
-	}
-
-	accExists(username) {
-		if (this.email == username) {
+	async createAccount() {
+		try {
+			const userCredential = await createUserWithEmailAndPassword(auth, this.email, this.password);
+			const userId = userCredential.user.uid;
+			await setDoc(doc(db, "users", userId), {
+				email: this.email,
+				role: this.role,
+			});
 			return true;
+		} catch (error) {
+			console.error("Error creating account:", error);
+			return false;
 		}
-		return false;
 	}
 
-	confirmLogout() {
-		// logout for this instance
+	async login() {
+		try {
+			const userCredential = await signInWithEmailAndPassword(auth, this.email, this.password);
+			return userCredential.user;
+		} catch (error) {
+			console.error("Login error:", error);
+			return null;
+		}
+	}
+
+	static async getUserRole(userId) {
+		const userDoc = await getDoc(doc(db, "users", userId));
+		return userDoc.exists() ? userDoc.data().role : null;
 	}
 }
-*/
