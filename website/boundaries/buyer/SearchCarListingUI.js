@@ -21,14 +21,26 @@ class SearchCarListingUI {
 
 		if (searchResult.length > 0) {
 			document.getElementById("car_listing").innerText = JSON.stringify(results, null, 2);
-			searchError.style.display = "none";
+			this.searchError.style.display = "none";
 		}
 		else {
-			searchError.style.display = "block";
+			this.searchError.style.display = "block";
 		}
 	}
 
 	displaySearchResult() {
+		let listingsContainer = document.getElementById("car_listing");
+
+		listings.forEach(listing => {
+			const childEle = document.createElement("div");
+			childEle.innerHTML = `
+				<h3>${listing.listingName}</h3>
+				<p>${listing.model}</p>
+				<p>Price: ${listing.price}</p>
+			`;
+
+			listingsContainer.appendChild(childEle);
+		});
 	}
 
 	displayPg() {
