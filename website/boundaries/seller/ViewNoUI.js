@@ -1,16 +1,22 @@
 import { ViewNoController } from "../../controllers/seller/ViewNoController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let views = new ViewNoUI();
-	views.displayViews();
+	let viewsUI = new ViewNoUI();
+	viewsUI.getViews(CarListingID);
 });
 
 class ViewNoUI {
 	constructor() {
-		this.viewController = new ViewNoController();
+		this.controller = new ViewNoController();
+		this.views = 0;
+	}
+
+	getViews(CarListingID) {
+		this.views = this.controller.getViews(CarListingID);
+		this.displayViews()
 	}
 
 	displayViews() {
-		this.viewController.getViews(CarListingID);
+		document.getElementById("views").value = this.views
 	}
 }

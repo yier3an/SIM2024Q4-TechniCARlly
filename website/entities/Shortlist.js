@@ -1,3 +1,8 @@
+// entities/Shortlist.js
+
+import firebase from "firebase/app";
+import "firebase/firestore";
+
 export class Shortlist {
 	constructor() {
 		this.db = firebase.firestore();
