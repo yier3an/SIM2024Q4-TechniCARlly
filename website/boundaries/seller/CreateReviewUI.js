@@ -3,7 +3,7 @@ import { CreateReviewController } from "../../controllers/buyer/CreateReviewCont
 document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("submit_review_btn").addEventListener("click", () => {
 		console.log("clicked.");
-		let agent = document.getElementById("agentName").value;
+		let agent = document.getElementById("agentName").textContent;
 		let reviewer = "testReview";
 		let rating = document.getElementById("rating").value;
 		let review = document.getElementById("review").value;
