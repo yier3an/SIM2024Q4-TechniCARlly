@@ -1,9 +1,11 @@
-class SearchCarListingController {
+import { CarListing } from "../../entities/CarListing.js";
+
+export class SearchCarListingController {
 	constructor() {
-		this.cl = new SearchCarListingController();
+		this.cl = new CarListing();
 	}
 
-	searchCarlist() {
-		//
+	async searchListing(info) {
+		return await this.cl.searchCarlist(info);
 	}
 }

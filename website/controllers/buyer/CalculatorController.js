@@ -1,4 +1,6 @@
-class CalculatorController {
+import { CarLoan } from "../../entities/CarLoan.js";
+
+export class CalculatorController {
 	constructor() {
 		this.carLoan = new CarLoan();
 	}

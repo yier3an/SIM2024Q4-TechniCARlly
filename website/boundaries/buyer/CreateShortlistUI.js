@@ -1,5 +1,7 @@
+import { CreateShortlistController } from "../../controllers/buyer/CreateShortlistController.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("createSL").addEventListener("click", () => {
+	document.getElementById("saveSL").addEventListener("click", () => {
 		console.log("clicked.");
 		const createSL = new CreateShortlistUI();
 		createSL.displayPopup();

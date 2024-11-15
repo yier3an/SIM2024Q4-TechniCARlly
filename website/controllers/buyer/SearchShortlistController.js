@@ -1,9 +1,9 @@
-class SearchShortlistController {
+export class ViewShortlistController {
 	constructor() {
 		this.sl = new Shortlist();
 	}
 
-	searchShortlist() {
-		//
+	viewShortlist(carListingID) {
+		return this.sl.viewShortlist(carListingID);
 	}
 }

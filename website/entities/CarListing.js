@@ -17,10 +17,10 @@ export class CarListing {
 		return newListingRef.id;
 	}
 
-	static async getListingById(id) {
+	static async getCarListing() {
 		// Retrieve a listing by ID
 		const db = firebase.firestore();
-		const listingDoc = await db.collection("carListings").doc(id).get();
+		const listingDoc = await db.collection("CarListing").doc().get();
 		return listingDoc.exists ? listingDoc.data() : null;
 	}
 
