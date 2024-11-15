@@ -4,10 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("saveSL").addEventListener("click", () => {
 		console.log("clicked.");
 		let save = document.getElementById("saveSL");
-		let carListingID = document.getElementById("carListingID").value;
+		let buyer = "testing shortlist";
+		let carListingID = document.getElementById("carListingID").textContent;
 
 		const createSL = new CreateShortlistUI();
-		createSL.saveListing(carListingID, save);
+		createSL.saveListing(carListingID, buyer, save);
 	});
 });
 
@@ -17,8 +18,8 @@ class CreateShortlistUI {
 		this.saveStatus = "";
 	}
 
-	saveListing(carListingID, save) {
-		this.slController.saveListing(carListingID);
+	saveListing(carListingID, buyer, save) {
+		this.slController.saveListing(carListingID, buyer);
 		this.saveStatus = save;
 		this.saveSuccess();
 	}

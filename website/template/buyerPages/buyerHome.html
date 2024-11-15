@@ -37,7 +37,7 @@
 			<span id="searchError" style="display: none;">Could not find listings with that keyword</span>
 			<div class="car_listing" id="car_listing">
 				<!-- ** retrieve from database -->
-				<!-- <div class="car">
+				<div class="car">
 					<img src="" alt="">
 					<div class="car_content">
 						<table>
@@ -46,7 +46,8 @@
 								<td class="text"><span>car1 </label></td>
 							</tr>
 							<tr>
-								<td class="label">Listing ID:<span id="carListingID"></span></td>
+								<td class="label"><span>Listing ID:</span></td>
+								<td><span id="carListingID">C001</span></td>
 							</tr>
 							<tr>
 								<td class="label"><span>Model: </label></td>
@@ -59,24 +60,24 @@
 						</table>
 					</div>
 					<div class="modify_btn">
-						display popup show saved to shortlist 
+						<!--display popup show saved to shortlist-->
 						<button class="save_shortlist" id="saveSL">Save</button>
 						<button class="car_show_more" onclick="window.location.href='buyerViewCar.html'">Show
 							more...</button>
 					</div>
-				</div> -->
+				</div>
 
-				
 			</div>
 
 		</div>
+	</div>
 
-		<script type="module" src="../../../firebaseConfig.js"></script>
-		<script type="module" src="../../entities/CarListing.js"></script>
-		<script type="module" src="../../controllers/buyer/ViewCarListingController.js"></script>
-		<script type="module" src="../../boundaries/buyer/ViewCarListingUI.js"></script>
-		<script type="module" src="../../controllers/buyer/CreateShortlistController.js"></script>
-		<script type="module" src="../../boundaries/buyer/CreateShortlistUI.js"></script>
+	<script type="module" src="../../../firebaseConfig.js"></script>
+	<script type="module" src="../../entities/CarListing.js"></script>
+	<script type="module" src="../../controllers/buyer/ViewCarListingController.js"></script>
+	<script type="module" src="../../boundaries/buyer/ViewCarListingUI.js"></script>
+	<script type="module" src="../../controllers/buyer/CreateShortlistController.js"></script>
+	<script type="module" src="../../boundaries/buyer/CreateShortlistUI.js"></script>
 </body>
 
 </html>
