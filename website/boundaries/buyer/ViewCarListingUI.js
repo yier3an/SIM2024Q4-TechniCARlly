@@ -2,35 +2,35 @@ import { ViewCarListingController } from "../../controllers/buyer/ViewCarListing
 
 document.addEventListener("DOMContentLoaded", () => {
 	const carListing = new ViewCarListingUI();
-	// var x = document.getElementById("searchError");
-	// if (x.style.display === "none") {
-	// 	x.style.display = "block";
-	// } else {
-	// 	x.style.display = "none";
-	// }
-	carListing.displayListing();
+	carListing.getCarListing();
 });
 
 class ViewCarListingUI {
 	constructor() {
-		this.viewController = new ViewCarListingController();
+		this.viewCarListing = new ViewCarListingController();
+		this.carList = [];
 	}
 
-	displayListing() {
-		let listings = this.viewController.getCarListing();
-		console.log(listings);
+	getCarListing() {
+		this.carList = this.viewCarListing.getCarListing();
 
-		let listingsContainer = document.getElementById("car_listing");
+		this.displayListing();
+	}
 
-		listings.forEach(listing => {
-			const childEle = document.createElement("div");
-			childEle.innerHTML = `
-				<h3>${listing.listingName}</h3>
-				<p>${listing.model}</p>
-				<p>Price: ${listing.price}</p>
-			`;
+	async displayListing() {
+		const listing = document.getElementsByClassName("car");
 
-			listingsContainer.appendChild(childEle);
-		});
+		// clear table body
+		listing.innerHTML = "";
+
+		for (item in this.carList) {
+			let row = document.createElement("tr");
+
+			let clName = document.createElement("td");
+			clName.textContent = item.listingName;
+			row.appendChild(clName);
+
+			listing.appendChild(row);
+		}
 	}
 }
