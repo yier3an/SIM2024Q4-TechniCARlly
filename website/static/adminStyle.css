@@ -63,11 +63,15 @@
     font-size: 18px;
 }
 
-#create_acc_form .field_input, 
-#edit_acc_form .field_input, 
-#create_profile_form .field_input, 
-#edit_profile_form .field_input {
-    width: 65%;
+#create_acc_form select,
+#create_acc_form input, 
+#edit_acc_form select,
+#edit_acc_form input,
+#create_profile_form input,
+#create_profile_form textarea,
+#edit_profile_form input, 
+#edit_profile_form textarea {
+    width: 150px;
 }
 
 #create_acc_action, 
