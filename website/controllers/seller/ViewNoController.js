@@ -5,7 +5,7 @@ export class ViewNoController {
 		this.cl = new CarListing();
 	}
 
-	getViews() {
-		return this.cl.getViews();
+	getViews(CarListingID) {
+		return this.cl.getViews(CarListingID);
 	}
 }

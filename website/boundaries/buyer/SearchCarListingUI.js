@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 class SearchCarListingUI {
 	constructor() {
 		this.searchController = new SearchCarListingController();
-		let searchError = document.getElementById("searchError");
+		this.searchError = document.getElementById("searchError");
 	}
 
 	searchListing(info) {

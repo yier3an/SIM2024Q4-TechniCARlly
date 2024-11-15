@@ -5,7 +5,7 @@ export class CreateReviewController {
 		this.r = new Review();
 	}
 
-	createReview(rating, review) {
-		return this.r.createReview(rating, review);
+	createReview(agent, reviewer, rating, review) {
+		return this.r.createReview(agent, reviewer, rating, review);
 	}
 }

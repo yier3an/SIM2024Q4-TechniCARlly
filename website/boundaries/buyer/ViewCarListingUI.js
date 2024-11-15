@@ -1,7 +1,7 @@
 import { ViewCarListingController } from "../../controllers/buyer/ViewCarListingController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let carListing = new ViewCarListingUI();
+	const carListing = new ViewCarListingUI();
 	// var x = document.getElementById("searchError");
 	// if (x.style.display === "none") {
 	// 	x.style.display = "block";

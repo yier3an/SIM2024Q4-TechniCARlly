@@ -1,16 +1,22 @@
-import { ViewShortlistController } from "../../controllers/seller/ViewShortlistController";
+import { ViewShortlistController } from "../../controllers/seller/ViewShortlistController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	let views = new ViewNoController();
-	views.displayViews();
+	const viewsUI = new ViewShortlistUI();
+	viewsUI.getViews(CarListingID);
 });
 
 class ViewShortlistUI {
 	constructor() {
-		this.viewController = new ViewShortlistController();
+		this.controller = new ViewShortlistController();
+		this.views = 0;
 	}
 
-	displayViews() {
-		this.viewController.getViews(CarListingID);
+	getSL(CarListingID) {
+		this.views = this.controller.getSL(CarListingID);
+		this.displaySL()
+	}
+
+	displaySL() {
+		document.getElementById("views").value = this.views
 	}
 }

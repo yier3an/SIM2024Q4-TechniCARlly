@@ -1,13 +1,15 @@
 import { CreateReviewController } from "../../controllers/buyer/CreateReviewController";
 
 document.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("saveSL").addEventListener("click", () => {
+	document.getElementById("submit_review_btn").addEventListener("click", () => {
 		console.log("clicked.");
-		let rating = document.getElementById("rating");
+		let agent = document.getElementById("agent").value;
+		let reviewer = "testReview";
+		let rating = document.getElementById("rating").value;
 		let review = document.getElementById("review").value;
 
 		const createR = new createReviewUI();
-		createR.createReview(rating, review);
+		createR.createReview(agent, reviewer, rating, review);
 	});
 });
 
@@ -16,12 +18,14 @@ class createReviewUI {
 		this.reviewController = new CreateReviewController();
 	}
 
-	createReview(rating, review) {
-		this.reviewController.createReview(rating, review);
+	createReview(agent, reviewer, rating, review) {
+		this.reviewController.createReview(agent, reviewer, rating, review);
 		this.reviewSuccess();
 	}
 
 	reviewSuccess() {
 		alert("Review Submitted.");
+
+		window.location.href = "/buyerViewCar.html"
 	}
 }

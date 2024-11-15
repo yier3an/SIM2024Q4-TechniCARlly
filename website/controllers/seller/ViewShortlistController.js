@@ -5,7 +5,7 @@ export class ViewShortlistController {
 		this.cl = new CarListing();
 	}
 
-	getSL() {
-		return this.cl.getSL();
+	getSL(CarListingID) {
+		return this.cl.getSL(CarListingID);
 	}
 }
