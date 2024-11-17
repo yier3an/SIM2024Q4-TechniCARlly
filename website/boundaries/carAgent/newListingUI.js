@@ -1,5 +1,5 @@
 import { createListing } from "../../controllers/carAgent/newListingController.js";
-import { CarListing } from "../../entities/carListing.js";
+import { CarListing } from "../../entities/CarListing.js";
 
 // Handle form submission
 export async function handleSubmit(event) {
