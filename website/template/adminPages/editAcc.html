@@ -3,18 +3,21 @@
 
 <head>
 	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="../../static/styles.css" type="text/css"/>
-	<link rel="stylesheet" href="../../static/adminStyle.css" type="text/css"/>
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+	<link rel="stylesheet" href="../../static/adminStyle.css" type="text/css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<script type="module" src="../../../firebaseConfig.js"></script> <!-- Firebase configuration -->
+	<script type="module" src="../../boundaries/admin/UpdateAccUI.js"></script> <!-- User edit functionality -->
+	<script type="module" src="../../controllers/admin/UpdateAccController.js"></script> <!-- Controller for updates -->
+
 </head>
 
 <body>
 	<div class="navbar">
 		<span id="group_name">TechniCARlly</span>
 		<a href="adminHome.html">Home</a>
-		<a href="viewAccList.html">Accounts</a>
+		<a href="viewAccList.html" class="active">Accounts</a>
 		<a href="viewProfileList.html">Profiles</a>
-
 		<div class="nav_item_right">
 			<a href="../logout.html" class="nav_logout">Logout</a>
 		</div>
@@ -25,57 +28,36 @@
 			<h2>Edit Account</h2>
 			<a href="viewAccList.html"><i class="fa-solid fa-xmark"></i></a>
 		</div>
-		<div class="suspend_row">
-			<button id="suspend_acc_btn">Suspend Account</button>
-		</div>
 
-		<form name="edit_acc" onsubmit="" method="post">
+		<form name="edit_acc" onsubmit="return false;">
 			<table>
-				<!-- <tr class="suspend_row">
-					
-				</tr> -->
 				<tr>
-					<td>
-						<label for="usertype">User Type: </label>
-					</td>
+					<td><label for="usertype">User Type:</label></td>
 					<td class="field_input">
 						<select id="usertype" name="usertype">
-							<option value="admin">User Admin</option>
+							<option value="admin">Admin</option>
 							<option value="buyer">Buyer</option>
 							<option value="seller">Seller</option>
-							<option value="agent">Used Car Agent</option>
-							<!-- ** option retrieve from database -->
+							<option value="agent">Agent</option>
 						</select>
 					</td>
 				</tr>
-
 				<tr>
-					<td>
-						<label for="name">Name: </label>
-					</td>
+					<td><label for="name">Name:</label></td>
 					<td class="field_input">
 						<input type="text" id="name" name="name" required />
-						<!-- ** retrieve from database -->
 					</td>
 				</tr>
-
 				<tr>
-					<td>
-						<label for="email">Email: </label>
-					</td>
+					<td><label for="email">Email:</label></td>
 					<td class="field_input">
 						<input type="email" id="email" name="email" required />
-						<!-- ** retrieve from database -->
 					</td>
 				</tr>
-
 				<tr>
-					<td>
-						<label for="password">Password: </label>
-					</td>
+					<td><label for="password">Password:</label></td>
 					<td class="field_input">
 						<input type="password" id="password" name="password" required />
-						<!-- ** retrieve from database -->
 					</td>
 				</tr>
 			</table>
@@ -83,15 +65,23 @@
 
 		<div id="edit_acc_action">
 			<button id="discard_edit_acc_btn" onclick="window.location.href='viewAccList.html'">Discard Changes</button>
-			<button type="submit" id="save_edit_acc_btn" onclick="window.location.href='viewAccList.html'">Save
-				Changes</button>
+			<button type="button" id="save_edit_acc_btn">Save Changes</button>
 		</div>
 	</div>
 
-	<script src="../../entities/userAccount.js"></script>
-	<script src="../../controllers/SuspendAccTestController.js"></script>
-	<script src="../../boundaries/suspendAccTestUI.js"></script>
+	<script type="module">
+		import { loadEditForm } from '../../boundaries/admin/UpdateAccUI.js';
 
+		// Retrieve the userId from the URL query parameters (do this only once)
+		const urlParams = new URLSearchParams(window.location.search);
+		const userId = urlParams.get('userId'); // Get the userId from URL query params
+
+		if (userId) {
+			loadEditForm(userId); // Load the edit form with the user data
+		} else {
+			console.error("No user ID provided in the URL.");
+		}
+	</script>
 </body>
 
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<title>TechniCARlly</title>
-	<link rel="stylesheet" href="../static/styles.css" type="text/css" />
+<html lang="en">
 
-	<!-- Import Firebase Configuration -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Login</title>
+	<link rel="stylesheet" href="../static/styles.css" type="text/css" />
 	<script type="module" src="../../firebaseConfig.js"></script>
 	<script type="module" src="../entities/userAccount.js"></script>
 </head>
@@ -20,8 +22,8 @@
 		<form name="login" onsubmit="return false;" method="post">
 			<table>
 				<tr>
-					<td><label for="username">Username: </label></td>
-					<td class="field_input"><input type="text" id="username" name="username" required /></td>
+					<td><label for="email">Email: </label></td>
+					<td class="field_input"><input type="email" id="email" name="email" required /></td>
 				</tr>
 				<tr>
 					<td><label for="password">Password: </label></td>
@@ -36,21 +38,14 @@
 		</div>
 	</div>
 
-	<!-- Button to Create an Admin User for Testing -->
-	<!-- <div id="create_admin_form">
-		<h3>Create Admin User (Testing)</h3>
-		<button id="createAdminBtn">Create Admin User</button>
-	</div> -->
-
 	<script type="module">
-		// Import the auth and db instances from firebaseConfig
 		import { auth, db } from "../../firebaseConfig.js";
-		import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-		import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+		import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+		import { getDoc, doc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-		// Login function
-		function login() {
-			const email = document.getElementById("username").value;
+		// Function to handle login
+		async function login() {
+			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
 
 			signInWithEmailAndPassword(auth, email, password)
@@ -87,13 +82,41 @@
 				alert("Error creating admin user: " + error.message);
 			}
 		}
+		try {
+			// Authenticate with Firebase Authentication
+			const userCredential = await signInWithEmailAndPassword(auth, email, password);
+			const user = userCredential.user;
 
-		// Event listener for create admin button
-		document.getElementById("createAdminBtn").addEventListener("click", createAdminUser);
+			// Get user data from Firestore
+			const userDoc = await getDoc(doc(db, "UserAccount", user.uid));
+
+			if (userDoc.exists()) {
+				const userData = userDoc.data();
+				const role = userData.role;
+
+				// Redirect based on user role
+				if (role === "admin") {
+					window.location.href = "adminPages/adminHome.html";  // Redirect to admin page
+				} else if (role === "agent") {
+					window.location.href = "agentPages/agentHome.html";  // Redirect to agent page
+				} else if (role === "seller") {
+					window.location.href = "sellerPages/sellerHome.html";  // Redirect to seller page
+				} else if (role === "buyer") {
+					window.location.href = "buyerPages/buyerHome.html";  // Redirect to seller page
+				}
+			} else {
+				console.log("No such user document!");
+				document.getElementById("err_mess").innerText = "No such user found.";
+			}
+		} catch (error) {
+			console.error("Login failed: ", error.message);
+			document.getElementById("err_mess").innerText = "Login failed: " + error.message;
+		}
+        }
+
+		// Event listener for the login button
+		document.getElementById("login_btn").addEventListener("click", login);
 	</script>
-
-	<!-- Custom JavaScript file for handling login UI -->
-	<script type="module" src="../boundaries/loginUI.js"></script>
 
 </body>
 

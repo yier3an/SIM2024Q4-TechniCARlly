@@ -6,6 +6,7 @@ import {
 }
 	from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
+// Firebase Configuration
 const firebaseConfig = {
 
 	apiKey: "AIzaSyBJskM4hFlHN-b7w8pvWDKNuwL1VhAk4Jc",
@@ -18,10 +19,10 @@ const firebaseConfig = {
 
 };
 
-// Initialize Firebase app once
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase services
+// Initialize Auth and Firestore
 const auth = getAuth(app);
 const db = getFirestore(app);
 

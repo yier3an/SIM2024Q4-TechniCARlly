@@ -1,10 +1,20 @@
-// UpdateAccController.js
-import UserAccount from '../entities/userAccount';
+import { UserAccount } from "../../entities/userAccount.js";
 
-class UpdateAccController {
-    static updateAccount(userId, updatedData) {
-        // Logic to update user account details based on userId
+
+export async function getAccountDetails(userId) {
+    try {
+        return await UserAccount.viewAccount(userId); // Fetch account details
+    } catch (error) {
+        console.error("Error fetching account details:", error);
+        throw error;
     }
 }
 
-export default UpdateAccController;
+export async function updateAccountDetails(userId, updatedData) {
+    try {
+        return await UserAccount.updateAccount(userId, updatedData); // Update account
+    } catch (error) {
+        console.error("Error updating account details:", error);
+        throw error;
+    }
+}
