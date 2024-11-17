@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>TechniCARlly</title>
-    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/buyerStyle.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>TechniCARlly</title>
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+	<link rel="stylesheet" href="../../static/buyerStyle.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,45 +20,54 @@
 		</div>
 	</div>
 
-    <!-- ** retrieve details from database -->
-    <div id="car_detials">
-        <div class="title_row">
-            <h2 class="listing_name">Listing name</h2>
-        </div>
-        
-        <div class="images">
-            <img src="" alt="car">
-        </div>
+	<!-- ** retrieve details from database -->
+	<div id="car_detials">
+		<div class="title_row">
+			<h2 class="listing_name">Listing name</h2>
+		</div>
 
-        <div class="car_detail_content">
-            <table>
-                <tr>
-                    <td class="label"><span>Listing Name: </span></td>
-                    <td class="text"><span>car1 </span></td>
+		<div class="images">
+			<img src="" alt="car">
+		</div>
+
+		<div class="car_detail_content">
+			<table>
+				<tr>
+					<td class="label"><span>Listing Name: </span></td>
+					<td class="text"><span>car1 </span></td>
+				</tr>
+				<tr>
+					<td class="label"><span>Model: </span></td>
+					<td><span>model1</span></td>
+				</tr>
+				<tr>
+					<td class="label"><span>Price: </span></td>
+					<td><span>$1200</span></td>
+				</tr>
+				<tr>
+					<td class="label"><span>Desctiption: </span></td>
+					<td><span>Some Desctiption for the car</span></td>
+				</tr>
+				<tr>
+                    <td><br></td>
                 </tr>
                 <tr>
-                    <td class="label"><span>Model: </span></td>
-                    <td><span>model1</span></td>
+                    <td class="label"><span>Seller: </span></td>
+                    <td class="text"><span id="carSeller">seller1</span></td>
                 </tr>
-                <tr>
-                    <td class="label"><span>Price: </span></td>
-                    <td><span>$1200</span></td>
-                </tr>
-                <tr>
-                    <td class="label"><span>Desctiption: </span></td>
-                    <td><span>Some Desctiption for the car</span></td>
-                </tr>
-            </table>
+			</table>
 
-            <div id="view_page_action">
-                <button id="rate_btn" onclick="window.location.href='buyerReview.html'">Rate & Review</button>
-                <button id="back_btn" onclick="window.location.href='buyerHome.html'">Back</button>
-                <!-- go back to previous page (buyerHome/buyerShortlist) -->
-            </div>
-        </div>
+			<div id="view_page_action">
+				<button id="rate_btn" onclick="window.location.href='buyerReview.html'">Rate & Review</button>
+				<button id="back_btn" onclick="window.location.href='buyerHome.html'">Back</button>
+				<!-- go back to previous page (buyerHome/buyerShortlist) -->
+			</div>
+		</div>
 
 
-    </div>
+	</div>
+
+	<script type="module" src="../../../firebaseConfig.js"></script>
 
 </body>
 

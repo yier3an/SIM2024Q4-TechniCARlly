@@ -2,65 +2,65 @@
 <html lang="en">
 
 <head>
-    <title>TechniCARlly</title>
-    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/adminStyle.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script type="module" src="../../../firebaseConfig.js"></script>
-    <script type="module" src="../../boundaries/admin/ViewAccUI.js"></script>
-    <script type="module" src="../../boundaries/admin/SuspendAccUI.js"></script>
+	<title>TechniCARlly</title>
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+	<link rel="stylesheet" href="../../static/adminStyle.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<script type="module" src="../../../firebaseConfig.js"></script>
+	<script type="module" src="../../boundaries/admin/ViewAccUI.js"></script>
+	<script type="module" src="../../boundaries/admin/SuspendAccUI.js"></script>
 	<script type="module" src="../../controllers/admin/UpdateAccController.js"></script>
 
 </head>
 
 <body>
-    <div class="navbar">
-        <span id="group_name">TechniCARlly</span>
-        <a href="adminHome.html">Home</a>
-        <a href="viewAccList.html" class="active">Accounts</a>
-        <a href="viewProfileList.html">Profiles</a>
-        <div class="nav_item_right">
-            <a href="../logout.html" class="nav_logout">Logout</a>
-        </div>
-    </div>
+	<div class="navbar">
+		<span id="group_name">TechniCARlly</span>
+		<a href="adminHome.html">Home</a>
+		<a href="viewAccList.html" class="active">Accounts</a>
+		<a href="viewProfileList.html">Profiles</a>
+		<div class="nav_item_right">
+			<a href="../logout.html" class="nav_logout">Logout</a>
+		</div>
+	</div>
 
-    <div>
-        <div class="header_row">
-            <h2>List of User Accounts</h2>
-            <button class="create_new_btn" onclick="window.location.href='createAcc.html'">Create New Account</button>
+	<div>
+		<div class="header_row">
+			<h2>List of User Accounts</h2>
+			<button class="create_new_btn" onclick="window.location.href='createAcc.html'">Create New Account</button>
 			<button onclick="window.location.href='editAcc.html?userId=USER_ID'">Edit</button>
 
-        </div>
+		</div>
 
-        <div id="accList">
-            <table id="userTable">
-                <thead>
-                    <tr>
-                        <th>User Type</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Edit</th>
-                        <th>Suspend</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- User rows will be dynamically added here -->
-                </tbody>
-            </table>
-        </div>
+		<div id="accList">
+			<table id="userTable">
+				<thead>
+					<tr>
+						<th>User Type</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Edit</th>
+						<th>Suspend</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- User rows will be dynamically added here -->
+				</tbody>
+			</table>
+		</div>
 
-        <!-- Inline script to dynamically load user accounts -->
-        <script type="module">
-            import { loadAccounts } from '../../boundaries/admin/ViewAccUI.js';
-            import { suspendAccount } from '../../boundaries/admin/SuspendAccUI.js';
+		<!-- Inline script to dynamically load user accounts -->
+		<script type="module">
+			import { loadAccounts } from '../../boundaries/admin/ViewAccUI.js';
+			import { suspendAccount } from '../../boundaries/admin/SuspendAccUI.js';
 
-            // Attach suspendAccount function globally for use in button onclicks
-            window.suspendAccount = suspendAccount;
+			// Attach suspendAccount function globally for use in button onclicks
+			window.suspendAccount = suspendAccount;
 
-            // Load user accounts dynamically
-            loadAccounts();
-        </script>
-    </div>
+			// Load user accounts dynamically
+			loadAccounts();
+		</script>
+	</div>
 </body>
 
 </html>

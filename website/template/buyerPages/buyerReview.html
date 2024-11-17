@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>TechniCARlly</title>
-    <link rel="stylesheet" href="../../static/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/buyerStyle.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<title>TechniCARlly</title>
+	<link rel="stylesheet" href="../../static/styles.css" type="text/css" />
+	<link rel="stylesheet" href="../../static/buyerStyle.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="navbar">
+	<div class="navbar">
 		<span id="group_name">TechniCARlly</span>
 		<a href="buyerHome.html">Home</a>
 		<a href="buyerShortlist.html">Shortlist</a>
@@ -20,57 +20,65 @@
 		</div>
 	</div>
 
-    <div id="review_form">
-        <div class="title_row">
-            <h2>Rate & Review Agent</h2>
-            <a href="buyerViewCar.html"><i class="fa-solid fa-xmark"></i></a>
-        </div>
+	<div id="review_form">
+		<div class="title_row">
+			<h2>Rate & Review Agent</h2>
+			<a href="buyerViewCar.html"><i class="fa-solid fa-xmark"></i></a>
+		</div>
 
-        <form name="review_agent" onsubmit="" method="post">
-            <table>
-                <tr>
-                    <td>
-                        <label for="agentName">Agent Name: </label>
-                    </td>
-                    <td class="text">
-                        <span>Agent1 </span>
-                    </td>
-                </tr>
+		<form name="review_agent" onsubmit="" method="post">
+			<table>
+				<tr>
+					<td>
+						<label for="agentName">Agent Name: </label>
+					</td>
+					<td class="text">
+						<span name="agentName" id="agentName">Agent1</span>
+					</td>
+				</tr>
 
-                <tr>
-                    <td>
-                        <label for="rating">Ratings: </label>
-                    </td>
-                    <td>
-                        <fieldset class="rating">
-                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                        </fieldset>
-                    </td>
-                </tr>
+				<tr>
+					<td>
+						<label for="rating">Ratings: </label>
+					</td>
+					<td>
+						<fieldset class="rating" id="rating">
+							<input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"
+								title="Awesome - 5 stars"></label>
+							<input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4"
+								title="Pretty good - 4 stars"></label>
+							<input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"
+								title="Meh - 3 stars"></label>
+							<input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"
+								title="Kinda bad - 2 stars"></label>
+							<input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"
+								title="Sucks big time - 1 star"></label>
+						</fieldset>
+					</td>
+				</tr>
 
-                <tr>
-                    <td>
-                        <label for="review">Review: </label>
-                    </td>
-                    <td class="field_input">
-                        <textarea name="review" rows="4" cols="22" required></textarea>
-                    </td>
-                </tr>
+				<tr>
+					<td>
+						<label for="review">Review: </label>
+					</td>
+					<td class="field_input">
+						<textarea name="review" id="review" rows="4" cols="22" required></textarea>
+					</td>
+				</tr>
 
-            </table>
-        </form>
+			</table>
+		</form>
 
-        <div id="review_agent_action">
-            <button id="cancel_review_btn" onclick="window.location.href='buyerViewCar.html'">Cancel</button>
-            <button type="submit" id="submit_review_btn" onclick="window.location.href='buyerViewCar.html'">Submit</button>
-        </div>
-    </div>
+		<div id="review_agent_action">
+			<button id="cancel_review_btn" onclick="window.location.href='buyerViewCar.html'">Cancel</button>
+			<button type="submit" id="submit_review_btn">Submit</button>
+		</div>
+	</div>
 
-    <script src="../../boundaries/loginUI.js"></script>
+	<script type="module" src="../../../firebaseConfig.js"></script>
+	<script type="module" src="../../entities/Review.js"></script>
+	<script type="module" src="../../controllers/buyer/CreateReviewController.js"></script>
+	<script type="module" src="../../boundaries/buyer/CreateReviewUI.js"></script>
 </body>
 
 </html>

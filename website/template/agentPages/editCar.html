@@ -29,6 +29,15 @@
 			<table>
 				<tr>
 					<td>
+						<label for="agentName">Agent: </label>
+					</td>
+                    <td class="text">
+						 <span id="agentName">agent Name</span>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
 						<label for="carName">Listing name: </label>
 					</td>
                     <td class="field_input">
@@ -50,16 +59,16 @@
 						<label for="price">Price: </label>
 					</td>
 					<td class="field_input">
-						<input type="text" id="price" name="price" required />
+						<input type="number" id="price" name="price" min="0" required />
 					</td>
 				</tr>
 
 				<tr>
 					<td>
-						<label for="descripton">Descripton: </label>
+						<label for="description">Description: </label>
 					</td>
 					<td class="field_input">
-						<input type="text" id="descripton" name="descripton" required />
+						<input type="text" id="description" name="description" required />
 					</td>
 				</tr>
 
@@ -69,6 +78,24 @@
 					</td>
 					<td class="field_input">
 						<input type="file" id="image" name="image" required />
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="buyer">Buyer: </label>
+					</td>
+					<td class="field_input">
+						<input type="text" id="buyer" name="buyer"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="seller">Seller: </label>
+					</td>
+					<td class="field_input">
+						<input type="text" id="seller" name="seller"/>
 					</td>
 				</tr>
 			</table>

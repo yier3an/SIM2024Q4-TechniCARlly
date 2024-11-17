@@ -1,46 +1,52 @@
-import { db } from "../../firebaseConfig.js";
-import { setDoc, getDoc, doc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+// entities/Shortlist.js
 
-class Shortlist {
-	async saveListing(carListingID, listingName, carModel, price, seller, buyer) {
-		try {
-			await setDoc(doc(db, "CarListing", "??"), {
-				carID: carListingID,
-				listingName: listingName,
-				carModel: carModel,
-				price: price,
-				seller: seller,
-				buyer: buyer
-			});
-			console.log("listing added successfully:");
-		} catch (error) {
-			console.error("Error adding listing to shortlist:", error);
+import { db, doc, setDoc, getDoc } from "../../firebaseConfig.js";
+
+export class Shortlist {
+	constructor(emptyArray = []) {
+		this.shortL = emptyArray;
+	}
+
+	async saveListing(carListingID, buyer) {
+		let cars = await this.getSLcar(buyer, carListingID);
+
+		for (i in cars) {
+			this.shortL.push(i);
+		}
+
+		this.shortL.push(carListingID);
+
+		const docRef = doc(db, "ShortList", buyer);
+		setDoc(docRef, {
+			buyer: buyer,
+			carListingID: this.shortL
+		}, { merge: true });
+	}
+
+	async getShortlist(buyer) {
+		const docRef = doc(db, "ShortList", ShortlistID);
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			return docSnap.data();
+		} else {
+			return null;
 		}
 	}
-	getShortlist(shortListID) {
-		try {
-			const userCredential = await signInWithEmailAndPassword(auth, email, password);
-			const user = userCredential.user;
 
-			const userDoc = await getDoc(doc(db, "users", user.uid));
-			if (userDoc.exists()) {
-				const userData = userDoc.data();
-				if (userData.role === "admin") {
-					window.location.href = "adminHome.html";
-				} else {
-					window.location.href = "userHome.html";
-				}
-			} else {
-				console.error("User data not found.");
-			}
-		} catch (error) {
-			console.error("Error logging in:", error);
-		}
+	async getSLcar(buyer, carListingID) {
+		const docRef = doc(db, "ShortList", ShortlistID);
 
-		try {
-			//
-		} catch (error) {
-			//
+		const q = query(collection(db, ShortlistID), where("carListingID", "==", carListingID));
+
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			console.log("Document data:", docSnap.data().carListingID);
+			return docSnap.data().carListingID;
+		} else {
+			console.log("No such document!");
 		}
 	}
+
 }

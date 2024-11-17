@@ -26,31 +26,96 @@
 		</div>
 
 		<div class="car_listing">
-			<!-- ** retrieve from database -->
-			<div class="car">
-				<img src="" alt="">
+			<div class="car" id="listingContainer">
+				<img src="../../static/asset/3.jpg" alt="">
 				<div class="car_content">
-					<table>
+
+					<table id="listing_table">
 						<tr>
 							<td class="label"><span>Listing Name: </label></td>
-							<td class="text"><span>car1 </label></td>
+							<td class="text" id="listingName"><span>car4 </label></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Listing ID:</span></td>
+							<td><span id="carListingID">C00004</span></td>
 						</tr>
 						<tr>
 							<td class="label"><span>Model: </label></td>
-							<td><span>model1</label></td>
+							<td><span id="carModel">Hyundai</label></td>
 						</tr>
 						<tr>
 							<td class="label"><span>Price: </label></td>
-							<td><span>$1200</label></td>
+							<td><span id="price">$195000</label></td>
 						</tr>
 					</table>
 				</div>
 				<div class="modify_btn">
-					<button class="car_show_more" onclick="window.location.href='sellerViewCar.html'">Show more...</button>
+					<button class="car_show_more" onclick="window.location.href='sellerViewCar.html'">Show
+						more...</button>
+				</div>
+			</div>
+			<div class="car" id="listingContainer">
+				<img src="../../static/asset/4.jpg" alt="">
+				<div class="car_content">
+
+					<table id="listing_table">
+						<tr>
+							<td class="label"><span>Listing Name: </label></td>
+							<td class="text" id="listingName"><span>car5 </label></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Listing ID:</span></td>
+							<td><span id="carListingID">C00005</span></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Model: </label></td>
+							<td><span id="carModel">Honda</label></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Price: </label></td>
+							<td><span id="price">$217800</label></td>
+						</tr>
+					</table>
+				</div>
+				<div class="modify_btn">
+					<button class="car_show_more" onclick="window.location.href='sellerViewCar.html'">Show
+						more...</button>
+				</div>
+			</div>
+			<div class="car" id="listingContainer">
+				<img src="../../static/asset/5.jpg" alt="">
+				<div class="car_content">
+
+					<table id="listing_table">
+						<tr>
+							<td class="label"><span>Listing Name: </label></td>
+							<td class="text" id="listingName"><span>car6 </label></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Listing ID:</span></td>
+							<td><span id="carListingID">C00006</span></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Model: </label></td>
+							<td><span id="carModel">Ford</label></td>
+						</tr>
+						<tr>
+							<td class="label"><span>Price: </label></td>
+							<td><span id="price">$250000</label></td>
+						</tr>
+					</table>
+				</div>
+				<div class="modify_btn">
+					<button class="car_show_more" onclick="window.location.href='sellerViewCar.html'">Show
+						more...</button>
 				</div>
 			</div>
 
 		</div>
+	</div>
+
+	<script type="module" src="../../../firebaseConfig.js"></script>
+	<script type="module" src="../../entities/CarListing.js"></script>
 
 </body>
 

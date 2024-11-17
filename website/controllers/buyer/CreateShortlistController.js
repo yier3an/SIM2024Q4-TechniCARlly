@@ -1,9 +1,11 @@
-class CreateShortlistController {
+import { Shortlist } from "../../entities/Shortlist.js";
+
+export class CreateShortlistController {
 	constructor() {
 		this.sl = new Shortlist();
 	}
 
-	createShortlist() {
-		//
+	saveListing(carListingID, buyer) {
+		return this.sl.saveListing(carListingID, buyer);
 	}
 }

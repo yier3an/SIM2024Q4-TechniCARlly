@@ -1,9 +1,11 @@
-class ViewShortlistController {
+import { CarListing } from "../../entities/CarListing.js";
+
+export class ViewCarListingController {
 	constructor() {
-		this.sl = new Shortlist();
+		this.carL = new CarListing();
 	}
 
-	viewShortlist(carListingID) {
-		return this.sl.viewShortlist(carListingID);
+	getCarListing() {
+		return this.carL.getCarListing();
 	}
 }
